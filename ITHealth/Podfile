@@ -1,0 +1,17 @@
+platform :ios, '14.0'
+use_frameworks!
+
+def pods
+ pod 'Alamofire'
+ pod 'SwiftLint'
+ pod 'SnapKit'
+ pod 'SwiftyJSON'
+ pod 'Lokalise'
+ pod 'SVProgressHUD'
+ pod 'ReachabilitySwift'
+ pod 'KeychainAccess'
+end
+
+target 'ITHealth' do
+  pods
+end
