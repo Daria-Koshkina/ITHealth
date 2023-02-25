@@ -5,3 +5,14 @@
   Created by Dasha Koshkina on 12.02.2023.
   
 */
+"server_error.title" = "Application error";
+"server_error.unknown.message" = "Something went wrong";
+"server_error.no_internet.message" = "No internet connection";
+"server_error.unauthorized.message" = "The session time has expired. Please log in again";
+"auth.title" = "Welcome";
+"auth.email.title" = "Email";
+"auth.email.placeholder" = "ivan.ivanov@gmail.com";
+"auth.email.password" = "password";
+"auth.email.password.forgot" = "Forgot password?";
+"auth.auth_button.title" = "Log in";
+"auth.register_button.title" = "Register";

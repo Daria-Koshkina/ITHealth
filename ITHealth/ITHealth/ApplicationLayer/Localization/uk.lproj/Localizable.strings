@@ -5,3 +5,14 @@
   Created by Dasha Koshkina on 12.02.2023.
   
 */
+"server_error.title" = "Помилка додатку";
+"server_error.unknown.message" = "Щось пішло не так";
+"server_error.no_internet.message" = "Відсутнє підклюяаення до інтернету";
+"server_error.unauthorized.message" = "Час сесії вийшов. Будь ласка, авторизуйтесь наново";
+"auth.title" = "Ласкаво просимо";
+"auth.email.title" = "Пошта";
+"auth.email.placeholder" = "ivan.ivanov@gmail.com";
+"auth.email.password" = "password";
+"auth.email.password.forgot" = "Забули пароль?";
+"auth.auth_button.title" = "Увійти";
+"auth.register_button.title" = "Зареєструватися";

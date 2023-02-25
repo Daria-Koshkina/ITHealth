@@ -11,14 +11,24 @@ import SnapKit
 class AppCoordinator: Coordinator {
   
   // MARK: - Private variables
+  private var authCoordinator: AuthCoordinator?
   
   // MARK: - Start
   override func start(completion: (() -> Void)? = nil) {
-    let vc = UIViewController()
-    vc.view.backgroundColor = .systemRed
-    navigationController.pushViewController(vc, animated: true)
+    showAuth()
   }
   
   // MARK: - Private methods
-  
+  private func showAuth() {
+    let authCoordinator = AuthCoordinator(navigationController: navigationController)
+    authCoordinator.output = self
+    self.authCoordinator = authCoordinator
+    authCoordinator.start()
+  }
+}
+
+extension AppCoordinator: AuthCoordinatorOutput {
+  func wasAuthorized(from: AuthCoordinator) {
+    
+  }
 }
