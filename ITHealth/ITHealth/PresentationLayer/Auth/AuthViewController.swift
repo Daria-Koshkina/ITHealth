@@ -69,6 +69,24 @@ class AuthViewController: LocalizableViewController, ErrorAlertDisplayable {
       object: nil)
   }
   
+  private func healthAuthIfNeeded() {
+    HealthService.shared.authorizeHealthKit { (authorized, error) in
+      guard authorized else {
+        
+        let baseMessage = "HealthKit Authorization Failed"
+        
+        if let error = error {
+          print("\(baseMessage). Reason: \(error.localizedDescription)")
+        } else {
+          print(baseMessage)
+        }
+        
+        return
+      }
+      print("HealthKit Successfully Authorized.")
+    }
+  }
+  
   private func setup() {
     hideKeyboardWhenTappedAround()
     selfView.emailTextField.inputViewDelegate = self
@@ -112,7 +130,7 @@ class AuthViewController: LocalizableViewController, ErrorAlertDisplayable {
   
   @objc
   private func didTapRegister() {
-    
+    output?.register(from: self)
   }
   
   // MARK: - Keyboard

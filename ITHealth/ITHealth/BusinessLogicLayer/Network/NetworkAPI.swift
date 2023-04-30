@@ -27,6 +27,7 @@ class NetworkAPI: NSObject {
     } else {
       headers[NetworkRequestKey.authorization] = nil
     }
+    headers["Accept-Language"] = "uk-UA"
     debugPrint(" ☄️ REQUEST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     debugPrint(" ☄️ >>> Path >>>:", requestURL)
     debugPrint(" ☄️ >>> Headers >>>:", headers)

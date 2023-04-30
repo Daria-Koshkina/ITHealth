@@ -13,6 +13,8 @@ class Validator {
     case name
     case email
     case password
+    case pressure
+    case hours
   }
   
   static var latinAlphabetSet: CharacterSet {
@@ -47,6 +49,14 @@ class Validator {
       guard let string = string else { return isEmptyStringValid }
       let cutString = string.trimmingCharacters(in: .whitespacesAndNewlines)
       return cutString.count <= maxSymbolsCount(for: .password) && cutString.count >= minSymbolsCount(for: .password)
+    case .pressure:
+      guard let string = string else { return isEmptyStringValid }
+      let cutString = string.trimmingCharacters(in: .whitespacesAndNewlines)
+      return cutString.count <= maxSymbolsCount(for: .pressure) && cutString.count >= minSymbolsCount(for: .pressure)
+    case .hours:
+      guard let string = string else { return isEmptyStringValid }
+      let cutString = string.trimmingCharacters(in: .whitespacesAndNewlines)
+      return cutString.count <= maxSymbolsCount(for: .hours) && cutString.count >= minSymbolsCount(for: .hours)
     }
   }
   
@@ -65,6 +75,9 @@ class Validator {
       var set = latinAlphabetSet
       set.formUnion(CharacterSet.decimalDigits)
       return set
+    case .pressure,
+        .hours:
+      return CharacterSet.decimalDigits
     }
   }
   
@@ -76,6 +89,10 @@ class Validator {
       return 63
     case .password:
       return Int.max
+    case .pressure:
+      return 3
+    case .hours:
+      return 2
     }
   }
   
@@ -87,6 +104,10 @@ class Validator {
       return 5
     case .password:
       return 8
+    case .pressure:
+      return 1
+    case .hours:
+      return 1
     }
   }
 }

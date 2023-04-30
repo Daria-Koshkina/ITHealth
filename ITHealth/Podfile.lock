@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.4)
+  - ESTabBarController-swift (2.6.5)
   - KeychainAccess (4.2.2)
   - Lokalise (0.10.2)
   - ReachabilitySwift (5.0.0)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - ESTabBarController-swift (~> 2.6.4)
   - KeychainAccess
   - Lokalise
   - ReachabilitySwift
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ESTabBarController-swift
     - KeychainAccess
     - Lokalise
     - ReachabilitySwift
@@ -31,6 +34,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  ESTabBarController-swift: f31cd3e30bde23619d3b300266f27864d96ffb58
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Lokalise: 252c397887dfd9983331abffa90ab60cdb004e19
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 337111fce8d05dc613595ff45b93aa3f6bb7e9f6
+PODFILE CHECKSUM: 9cea451d4690d7d83ac2eebebfb2c56d5f19140a
 
 COCOAPODS: 1.11.3

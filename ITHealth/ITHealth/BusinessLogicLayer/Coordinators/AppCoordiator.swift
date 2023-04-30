@@ -12,10 +12,15 @@ class AppCoordinator: Coordinator {
   
   // MARK: - Private variables
   private var authCoordinator: AuthCoordinator?
+  private var mainTabBarCoordinator: MainTabBarCoordinator?
   
   // MARK: - Start
   override func start(completion: (() -> Void)? = nil) {
-    showAuth()
+    if ProfileService.shared.isUserAuthorized {
+      showMain(completion: completion)
+    } else {
+      showAuth()
+    }
   }
   
   // MARK: - Private methods
@@ -25,10 +30,21 @@ class AppCoordinator: Coordinator {
     self.authCoordinator = authCoordinator
     authCoordinator.start()
   }
+  
+  private func showMain(completion: (() -> Void)? = nil) {
+    let mainTabBarCoordinator = MainTabBarCoordinator(navigationController: navigationController)
+    mainTabBarCoordinator.output = self
+    self.mainTabBarCoordinator = mainTabBarCoordinator
+    mainTabBarCoordinator.start(completion: completion)
+  }
 }
 
 extension AppCoordinator: AuthCoordinatorOutput {
   func wasAuthorized(from: AuthCoordinator) {
-    
+    showMain()
   }
+}
+
+extension AppCoordinator: MainTabBarCoordinatorOutput {
+  
 }

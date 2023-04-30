@@ -88,12 +88,11 @@ class ProfileService {
                 gender: Gender,
                 bloodType: HKBloodType,
                 averagePressure: Double,
-                workHoursCount: Int, completion: @escaping (_ response: Result<User , Error>) -> Void) {
+                workHoursCount: Int, completion: @escaping (_ response: Result<Any? , Error>) -> Void) {
     AuthAPI.shared.register(email: email, password: password, nick: nick, role: role, fullName: fullName, birthday: birthday, gender: gender, bloodType: bloodType, averagePressure: averagePressure, workHoursCount: workHoursCount) { result in
       switch result {
-      case .success(let token):
-        self.token = token
-        self.getUser(completion: completion)
+      case .success:
+        completion(.success(nil))
       case .failure(let error):
         completion(.failure(error))
       }

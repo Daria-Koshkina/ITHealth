@@ -18,6 +18,7 @@ class AuthCoordinator: Coordinator {
   
   // MARK: - Private variables
   private var authViewController: AuthViewController?
+  private weak var registerViewController: RegisterViewController?
   
   // MARK: - Start
   override func start(completion: (() -> Void)? = nil) {
@@ -36,6 +37,16 @@ extension AuthCoordinator: AuthViewControllerOutput {
   }
   
   func register(from: AuthViewController) {
-    
+    let registerViewController = RegisterViewController()
+    registerViewController.output = self
+    self.registerViewController = registerViewController
+    navigationController.pushViewController(registerViewController, animated: true)
+  }
+}
+
+// MARK: - RegisterViewControllerOutput
+extension AuthCoordinator: RegisterViewControllerOutput {
+  func wasRegistered(from: RegisterViewController) {
+    navigationController.popViewController(animated: true)
   }
 }

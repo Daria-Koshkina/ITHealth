@@ -10,6 +10,7 @@ def pods
  pod 'SVProgressHUD'
  pod 'ReachabilitySwift'
  pod 'KeychainAccess'
+ pod 'ESTabBarController-swift', '~> 2.6.4'
 end
 
 target 'ITHealth' do

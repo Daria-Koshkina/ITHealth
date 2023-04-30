@@ -60,7 +60,7 @@ class AuthAPI: NetworkAPI {
                 gender: Gender,
                 bloodType: HKBloodType,
                 averagePressure: Double,
-                workHoursCount: Int, completion: @escaping (_ response: Result<Token, Error>) -> Void) {
+                workHoursCount: Int, completion: @escaping (_ response: Result<Any?, Error>) -> Void) {
     if !ReachabilityService.shared.isInternetAvailable {
       completion(.failure(ServerError.noInternetConnection))
       return
@@ -73,7 +73,8 @@ class AuthAPI: NetworkAPI {
                                  NetworkRequestKey.Auth.gender: gender.rawValue,
                                  NetworkRequestKey.Auth.bloodType: bloodType.rawValue,
                                  NetworkRequestKey.Auth.averagePressure: averagePressure,
-                                 NetworkRequestKey.Auth.workHoursCount: workHoursCount]
+                                 NetworkRequestKey.Auth.workHoursCount: workHoursCount,
+                                 NetworkRequestKey.Auth.password: password]
     
     alamofireRequest(endpoint: Endpoint.register,
                      method: .post,
@@ -83,14 +84,8 @@ class AuthAPI: NetworkAPI {
       switch parsedResult {
       case .failure(let error):
         completion(.failure(error))
-      case .success(let json):
-        let data = json[NetworkResponseKey.data]
-        if let token = data[NetworkResponseKey.accessToken].string {
-          completion(.success(token))
-        } else {
-          completion(.failure(ServerError.unknown))
-          return
-        }
+      case .success:
+        completion(.success(nil))
       }
     }
   }

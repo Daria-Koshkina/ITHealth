@@ -12,4 +12,7 @@ enum Images {
   static let eye = #imageLiteral(resourceName: "eye")
   static let strikethroughEye = #imageLiteral(resourceName: "strikethroughEye")
   static let whiteEye = #imageLiteral(resourceName: "whiteEye")
+  static let settings = #imageLiteral(resourceName: "home")
+  static let tests = #imageLiteral(resourceName: "test")
+  static let tasks = #imageLiteral(resourceName: "tasks")
 }
