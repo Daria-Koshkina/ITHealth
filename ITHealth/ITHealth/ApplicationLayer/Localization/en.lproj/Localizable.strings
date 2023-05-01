@@ -16,3 +16,43 @@
 "auth.email.password.forgot" = "Forgot password?";
 "auth.auth_button.title" = "Log in";
 "auth.register_button.title" = "Register";
+
+"registration.email" = "Email";
+"registration.password" = "Password";
+"registration.nick" = "Nick";
+"registration.name" = "Name";
+"registration.surname" = "Surname";
+"registration.birthday" = "Birthday";
+"registration.pressure" = "Average pressure";
+"registration.hours" = "Work hours";
+"registration.button" = "Register";
+"gender.male" = "Male";
+"gender.female" = "Female";
+
+"settings.title" = "Settings";
+"tests.title" = "Tests";
+"tasks.title" = "Tasks";
+
+"profile.item.profile" = "Profile";
+"profile.item.profile.subtitle" = "Check or update profile data";
+"profile.item.health" = "Health";
+"profile.item.health.subtitle" = "Check health statistic";
+"profile.item.work" = "Work";
+"profile.item.work.subtitle" = "Check work progress";
+"profile.item.language" = "Language";
+"profile.item.logout" = "Logout";
+"profile_editTitle_title.text" = "Are you sure that you want to exit?";
+"profile_editTitle_exit.text" = "Logout";
+"profile_editTitle_cancel.text" = "Cancel";
+"language_navTitle.text" = "Language";
+"profile.button.save" = "Save";
+"profile.item.password" = "Change password";
+"profile.success_update" = "Profile was successfuly updated";
+"profile.success_update.ok" = "OK";
+
+"change_password.success" = "Password was successfuly changed";
+"change_password.success.button" = "ОК";
+"change_password.navbar" = "Change password";
+"change_password.textfield.title" = "New password";
+"change_password.textfield.placeholder" = "New password";
+"change_password.button" = "Save";

@@ -39,12 +39,14 @@ class AppLanguage {
   }
   
   static var codes: [String] {
-    return [AppLanguage.ISO639Alpha2.english]
+    return [AppLanguage.ISO639Alpha2.english,
+            AppLanguage.ISO639Alpha2.ukranian]
   }
   
   // MARK: - ISO 639-1 Language codes
   enum ISO639Alpha2 {
-    static let english = "en_US"
+    static let english = "en-US"
+    static let ukranian = "uk-UA"
   }
   
   // MARK: - Factory method
@@ -53,8 +55,10 @@ class AppLanguage {
     switch code {
     case AppLanguage.ISO639Alpha2.english:
       language = AppLanguage(code: code, nativeName: "English")
+    case AppLanguage.ISO639Alpha2.ukranian:
+      language = AppLanguage(code: code, nativeName: "Ukranian")
     default:
-      fatalError("Language with code \(code) is not supported")
+      language = AppLanguage(code: code, nativeName: "English")
     }
     return language
   }

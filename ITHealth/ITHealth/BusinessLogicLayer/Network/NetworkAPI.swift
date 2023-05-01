@@ -21,13 +21,12 @@ class NetworkAPI: NSObject {
     let encodingType: ParameterEncoding = (method == .get) ? URLEncoding.default : JSONEncoding.default
     let requestURL = Constants.baseURL + endpoint
     var headers = headers
-    //    headers[NetworkRequestKey.acceptLanguage] = LocalizationService.shared.language.languageCode
     if let token = ProfileService.shared.token {
       headers[NetworkRequestKey.authorization] = "Bearer " + token
     } else {
       headers[NetworkRequestKey.authorization] = nil
     }
-    headers["Accept-Language"] = "uk-UA"
+    headers["Accept-Language"] = LocalizationService.shared.language.code
     debugPrint(" ☄️ REQUEST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     debugPrint(" ☄️ >>> Path >>>:", requestURL)
     debugPrint(" ☄️ >>> Headers >>>:", headers)

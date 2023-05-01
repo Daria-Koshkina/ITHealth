@@ -16,3 +16,43 @@
 "auth.email.password.forgot" = "Забули пароль?";
 "auth.auth_button.title" = "Увійти";
 "auth.register_button.title" = "Зареєструватися";
+
+"registration.email" = "Електронна пошта";
+"registration.password" = "Пароль";
+"registration.nick" = "Нік";
+"registration.name" = "Імʼя";
+"registration.surname" = "Прізвище";
+"registration.birthday" = "Дата народження";
+"registration.pressure" = "Середній тиск";
+"registration.hours" = "Робочий час";
+"registration.button" = "Зареєструватися";
+"gender.male" = "Чоловік";
+"gender.female" = "Жінка";
+
+"settings.title" = "Налаштування";
+"tests.title" = "Тести";
+"tasks.title" = "Задачі";
+
+"profile.item.profile" = "Профіль";
+"profile.item.profile.subtitle" = "Перевіряй чи оновлюй дані профілю";
+"profile.item.health" = "Здоровʼя";
+"profile.item.health.subtitle" = "Дивись статистику по здоровʼю";
+"profile.item.work" = "Робота";
+"profile.item.work.subtitle" = "Відстежуй робочий процес";
+"profile.item.language" = "Мова";
+"profile.item.logout" = "Вийти";
+"profile_editTitle_title.text" = "Ви впевнені що хочете вийти?";
+"profile_editTitle_exit.text" = "Вийти";
+"profile_editTitle_cancel.text" = "Відмінити";
+"language_navTitle.text" = "Мова";
+"profile.button.save" = "Зберегти";
+"profile.item.password" = "Змінити пароль";
+"profile.success_update" = "Профіль було успішно оновлено";
+"profile.success_update.ok" = "OK";
+
+"change_password.success" = "Пароль було успішно поновлено";
+"change_password.success.button" = "ОК";
+"change_password.navbar" = "Змінити пароль";
+"change_password.textfield.title" = "Новий пароль";
+"change_password.textfield.placeholder" = "Новий пароль";
+"change_password.button" = "Зберегти";

@@ -20,6 +20,7 @@ class AuthAPI: NetworkAPI {
     static let auth = "/account/login"
     static let register = "/account/signup"
     static let profile = "/account/profile"
+    static let update = "/account/update"
   }
   
   func auth(email: String,
@@ -86,6 +87,92 @@ class AuthAPI: NetworkAPI {
         completion(.failure(error))
       case .success:
         completion(.success(nil))
+      }
+    }
+  }
+  
+  func update(email: String,
+              nick: String,
+              fullName: String,
+              birthday: String,
+              averagePressure: Double,
+              workHoursCount: Int,
+              role: Role,
+              gender: Gender,
+              bloodType: HKBloodType,
+              completion: @escaping (_ response: Result<User, Error>) -> Void) {
+    if !ReachabilityService.shared.isInternetAvailable {
+      completion(.failure(ServerError.noInternetConnection))
+      return
+    }
+    let params: [String: Any] = [NetworkRequestKey.Auth.email: email,
+                                 NetworkRequestKey.Auth.userName: nick,
+                                 NetworkRequestKey.Auth.role: role.rawValue,
+                                 NetworkRequestKey.Auth.fullName: fullName,
+                                 NetworkRequestKey.Auth.birthday: birthday,
+                                 NetworkRequestKey.Auth.gender: gender.rawValue,
+                                 NetworkRequestKey.Auth.bloodType: bloodType.rawValue,
+                                 NetworkRequestKey.Auth.averagePressure: averagePressure,
+                                 NetworkRequestKey.Auth.workHoursCount: workHoursCount]
+    
+    alamofireRequest(endpoint: Endpoint.update,
+                     method: .put,
+                     parameters: params) { [weak self] dataResponse in
+      guard let self = self else { return }
+      let parsedResult = self.parseResponse(dataResponse)
+      switch parsedResult {
+      case .failure(let error):
+        completion(.failure(error))
+      case .success(let json):
+        if let user = User(json: json[NetworkResponseKey.data]) {
+          completion(.success(user))
+        } else {
+          completion(.failure(ServerError.unknown))
+        }
+      }
+    }
+  }
+  
+  func changePassword(email: String,
+              nick: String,
+              fullName: String,
+              birthday: String,
+              averagePressure: Double,
+              workHoursCount: Int,
+              role: Role,
+              gender: Gender,
+              bloodType: HKBloodType,
+                      password: String,
+              completion: @escaping (_ response: Result<User, Error>) -> Void) {
+    if !ReachabilityService.shared.isInternetAvailable {
+      completion(.failure(ServerError.noInternetConnection))
+      return
+    }
+    let params: [String: Any] = [NetworkRequestKey.Auth.email: email,
+                                 NetworkRequestKey.Auth.userName: nick,
+                                 NetworkRequestKey.Auth.role: role.rawValue,
+                                 NetworkRequestKey.Auth.fullName: fullName,
+                                 NetworkRequestKey.Auth.birthday: birthday,
+                                 NetworkRequestKey.Auth.gender: gender.rawValue,
+                                 NetworkRequestKey.Auth.bloodType: bloodType.rawValue,
+                                 NetworkRequestKey.Auth.averagePressure: averagePressure,
+                                 NetworkRequestKey.Auth.workHoursCount: workHoursCount,
+                                 NetworkRequestKey.Auth.password: password]
+    
+    alamofireRequest(endpoint: Endpoint.update,
+                     method: .put,
+                     parameters: params) { [weak self] dataResponse in
+      guard let self = self else { return }
+      let parsedResult = self.parseResponse(dataResponse)
+      switch parsedResult {
+      case .failure(let error):
+        completion(.failure(error))
+      case .success(let json):
+        if let user = User(json: json[NetworkResponseKey.data]) {
+          completion(.success(user))
+        } else {
+          completion(.failure(ServerError.unknown))
+        }
       }
     }
   }

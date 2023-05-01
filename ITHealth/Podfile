@@ -11,6 +11,7 @@ def pods
  pod 'ReachabilitySwift'
  pod 'KeychainAccess'
  pod 'ESTabBarController-swift', '~> 2.6.4'
+ pod 'FlagKit'
 end
 
 target 'ITHealth' do

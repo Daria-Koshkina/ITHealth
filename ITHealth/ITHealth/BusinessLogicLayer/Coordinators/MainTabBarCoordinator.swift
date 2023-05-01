@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainTabBarCoordinatorOutput: AnyObject {
-  
+  func userDidLogout(from: MainTabBarCoordinator)
 }
 
 class MainTabBarCoordinator: Coordinator {
@@ -29,6 +29,7 @@ class MainTabBarCoordinator: Coordinator {
   
   // MARK: - Life cycle
   override func start(completion: (() -> Void)? = nil) {
+    addObservers()
     configureMainTabBarController()
     showMainTabBarController(completion: completion)
     showFirstTabBar()
@@ -55,12 +56,25 @@ class MainTabBarCoordinator: Coordinator {
     tabBarController.selectedItem = Application.shared.allTabBars.sorted(by: { $0.index < $1.index }).first ?? Application.shared.defaultTabBar
   }
   
+  private func addObservers() {
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(userDidLogout),
+      name: .logout,
+      object: nil)
+  }
+  
   private func setupLocalization() {
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(localize),
       name: Notification.Name.LokaliseDidUpdateLocalization,
       object: nil)
+  }
+  
+  @objc
+  private func userDidLogout() {
+    output?.userDidLogout(from: self)
   }
   
   // MARK: - Configuration

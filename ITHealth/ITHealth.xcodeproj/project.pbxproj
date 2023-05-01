@@ -25,6 +25,18 @@
 		2F423FDD29FD983300203E59 /* TasksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FDC29FD983300203E59 /* TasksCoordinator.swift */; };
 		2F423FE029FD993F00203E59 /* TabBarRootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FDF29FD993F00203E59 /* TabBarRootNavigationController.swift */; };
 		2F423FE229FD996600203E59 /* TabItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FE129FD996600203E59 /* TabItemConfigurable.swift */; };
+		2F423FE529FEFEA200203E59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FE429FEFEA200203E59 /* SettingsViewController.swift */; };
+		2F423FE729FF02DA00203E59 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FE629FF02DA00203E59 /* SettingsView.swift */; };
+		2F423FE929FF033300203E59 /* ContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FE829FF033300203E59 /* ContentScrollView.swift */; };
+		2F423FEB29FF050400203E59 /* ProfileItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FEA29FF050400203E59 /* ProfileItemView.swift */; };
+		2F423FED29FF055C00203E59 /* LabelConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FEC29FF055C00203E59 /* LabelConfigurator.swift */; };
+		2F423FF029FF178400203E59 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FEF29FF178400203E59 /* LanguageViewController.swift */; };
+		2F423FF229FF196D00203E59 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FF129FF196D00203E59 /* LanguageTableViewCell.swift */; };
+		2F423FF429FF199200203E59 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FF329FF199200203E59 /* BaseTableViewCell.swift */; };
+		2F423FF729FF916200203E59 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FF629FF916200203E59 /* ProfileViewController.swift */; };
+		2F423FF929FFCF8A00203E59 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FF829FFCF8A00203E59 /* Date+Extension.swift */; };
+		2F423FFC29FFE04E00203E59 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FFB29FFE04E00203E59 /* ChangePasswordViewController.swift */; };
+		2F423FFE29FFE17700203E59 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FFD29FFE17700203E59 /* ChangePasswordView.swift */; };
 		2F7862B929AAAA1800463DD0 /* UINavigationViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7862B829AAAA1800463DD0 /* UINavigationViewController+Extension.swift */; };
 		2F7862BC29AAAF6F00463DD0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7862BB29AAAF6F00463DD0 /* RegisterViewController.swift */; };
 		2F7862BE29AAAF7C00463DD0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7862BD29AAAF7C00463DD0 /* RegisterView.swift */; };
@@ -98,6 +110,18 @@
 		2F423FDC29FD983300203E59 /* TasksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCoordinator.swift; sourceTree = "<group>"; };
 		2F423FDF29FD993F00203E59 /* TabBarRootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRootNavigationController.swift; sourceTree = "<group>"; };
 		2F423FE129FD996600203E59 /* TabItemConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemConfigurable.swift; sourceTree = "<group>"; };
+		2F423FE429FEFEA200203E59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2F423FE629FF02DA00203E59 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2F423FE829FF033300203E59 /* ContentScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentScrollView.swift; sourceTree = "<group>"; };
+		2F423FEA29FF050400203E59 /* ProfileItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemView.swift; sourceTree = "<group>"; };
+		2F423FEC29FF055C00203E59 /* LabelConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelConfigurator.swift; sourceTree = "<group>"; };
+		2F423FEF29FF178400203E59 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		2F423FF129FF196D00203E59 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
+		2F423FF329FF199200203E59 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		2F423FF629FF916200203E59 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2F423FF829FFCF8A00203E59 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		2F423FFB29FFE04E00203E59 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		2F423FFD29FFE17700203E59 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		2F7862B829AAAA1800463DD0 /* UINavigationViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationViewController+Extension.swift"; sourceTree = "<group>"; };
 		2F7862BB29AAAF6F00463DD0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2F7862BD29AAAF7C00463DD0 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -191,6 +215,42 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		2F423FE329FEFE7C00203E59 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2F423FE429FEFEA200203E59 /* SettingsViewController.swift */,
+				2F423FE629FF02DA00203E59 /* SettingsView.swift */,
+				2F423FEA29FF050400203E59 /* ProfileItemView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2F423FEE29FF176700203E59 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				2F423FEF29FF178400203E59 /* LanguageViewController.swift */,
+				2F423FF129FF196D00203E59 /* LanguageTableViewCell.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		2F423FF529FF912E00203E59 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2F423FF629FF916200203E59 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2F423FFA29FFE03700203E59 /* Change password */ = {
+			isa = PBXGroup;
+			children = (
+				2F423FFB29FFE04E00203E59 /* ChangePasswordViewController.swift */,
+				2F423FFD29FFE17700203E59 /* ChangePasswordView.swift */,
+			);
+			path = "Change password";
+			sourceTree = "<group>";
+		};
 		2F7862BA29AAAF5A00463DD0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +266,7 @@
 			children = (
 				2F892F81299D7ABE00EDC260 /* Validator.swift */,
 				2F892F83299D7B2300EDC260 /* RegexValidator.swift */,
+				2F423FEC29FF055C00203E59 /* LabelConfigurator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -266,6 +327,10 @@
 		2FEB1C0F2999567E006C3238 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2F423FFA29FFE03700203E59 /* Change password */,
+				2F423FF529FF912E00203E59 /* Profile */,
+				2F423FEE29FF176700203E59 /* Language */,
+				2F423FE329FEFE7C00203E59 /* Settings */,
 				2F7862BA29AAAF5A00463DD0 /* Registration */,
 				2FEBBA44299988A50021FE87 /* Auth */,
 				2FEB1C3B29996029006C3238 /* Assets */,
@@ -346,6 +411,8 @@
 				2FEBBA5C29998FA70021FE87 /* OutlinedButton.swift */,
 				2FEBBA70299997830021FE87 /* InputView.swift */,
 				2F423FCB29FC75E000203E59 /* BaseCollectionViewCell.swift */,
+				2F423FE829FF033300203E59 /* ContentScrollView.swift */,
+				2F423FF329FF199200203E59 /* BaseTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -458,6 +525,7 @@
 				2F7862B829AAAA1800463DD0 /* UINavigationViewController+Extension.swift */,
 				2F423FCD29FC7ABD00203E59 /* UICollectionView+Extension.swift */,
 				2F423FCF29FC7AEA00203E59 /* UITableView+Extension.swift */,
+				2F423FF829FFCF8A00203E59 /* Date+Extension.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -619,6 +687,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7862C029AAAFD700463DD0 /* NavigationButtoned.swift in Sources */,
+				2F423FEB29FF050400203E59 /* ProfileItemView.swift in Sources */,
+				2F423FF029FF178400203E59 /* LanguageViewController.swift in Sources */,
 				2F423FD229FD8A2200203E59 /* MainTabBarCoordinator.swift in Sources */,
 				2F423FD529FD8D2D00203E59 /* MainTabBarController.swift in Sources */,
 				2F423FCC29FC75E000203E59 /* BaseCollectionViewCell.swift in Sources */,
@@ -629,14 +699,19 @@
 				2F02583C29A2B4C50098190B /* AuthAPI.swift in Sources */,
 				2FEB1C1A29995CB5006C3238 /* Coordinator.swift in Sources */,
 				2FEBBA68299993D80021FE87 /* ServerError.swift in Sources */,
+				2F423FE929FF033300203E59 /* ContentScrollView.swift in Sources */,
 				2F892F90299D8A6400EDC260 /* UserMO.swift in Sources */,
 				2FEBBA5229998E570021FE87 /* AlertViewController.swift in Sources */,
 				2F02583429A2AFBA0098190B /* Notification+Extension.swift in Sources */,
+				2F423FF929FFCF8A00203E59 /* Date+Extension.swift in Sources */,
 				2F423FD729FD8D5800203E59 /* ColoredTabBarController.swift in Sources */,
+				2F423FFE29FFE17700203E59 /* ChangePasswordView.swift in Sources */,
 				2FEBBA5B29998F250021FE87 /* PrimaryButton.swift in Sources */,
 				2F892F8A299D87AB00EDC260 /* UIViewController+Extension.swift in Sources */,
 				2FEBBA642999903C0021FE87 /* UIColor+Extension.swift in Sources */,
 				2FEBBA6B299994290021FE87 /* NetworkKeys.swift in Sources */,
+				2F423FF429FF199200203E59 /* BaseTableViewCell.swift in Sources */,
+				2F423FE529FEFEA200203E59 /* SettingsViewController.swift in Sources */,
 				2FEB1C2C29995E0F006C3238 /* InitView.swift in Sources */,
 				2FEBBA662999915B0021FE87 /* Fonts.swift in Sources */,
 				2FEB1C2329995DD8006C3238 /* InitViewController.swift in Sources */,
@@ -657,7 +732,9 @@
 				2F423FC729FC076A00203E59 /* HealthService.swift in Sources */,
 				2F892F8C299D88F700EDC260 /* Constants.swift in Sources */,
 				2FEBBA5029998E320021FE87 /* InfoAlertView.swift in Sources */,
+				2F423FED29FF055C00203E59 /* LabelConfigurator.swift in Sources */,
 				2F7862BC29AAAF6F00463DD0 /* RegisterViewController.swift in Sources */,
+				2F423FF229FF196D00203E59 /* LanguageTableViewCell.swift in Sources */,
 				2FEB1BFF299954B4006C3238 /* ITHealth.xcdatamodeld in Sources */,
 				2FEBBA6029998FF30021FE87 /* Images.swift in Sources */,
 				2F892F8E299D8A1F00EDC260 /* CoreDataService.swift in Sources */,
@@ -665,6 +742,7 @@
 				2FEBBA71299997830021FE87 /* InputView.swift in Sources */,
 				2F892F92299D8A9900EDC260 /* User.swift in Sources */,
 				2FEB1C3029995E5F006C3238 /* Localizator.swift in Sources */,
+				2F423FFC29FFE04E00203E59 /* ChangePasswordViewController.swift in Sources */,
 				2FEBBA46299988BB0021FE87 /* AuthCoordinator.swift in Sources */,
 				2F892F82299D7ABE00EDC260 /* Validator.swift in Sources */,
 				2F02583829A2B31D0098190B /* Result.swift in Sources */,
@@ -677,11 +755,13 @@
 				2F423FE029FD993F00203E59 /* TabBarRootNavigationController.swift in Sources */,
 				2F7862B929AAAA1800463DD0 /* UINavigationViewController+Extension.swift in Sources */,
 				2F02583629A2B0B00098190B /* NetworkAPI.swift in Sources */,
+				2F423FE729FF02DA00203E59 /* SettingsView.swift in Sources */,
 				2FEBBA73299997D60021FE87 /* Optional+Extension.swift in Sources */,
 				2F423FDD29FD983300203E59 /* TasksCoordinator.swift in Sources */,
 				2F892F88299D7B8700EDC260 /* UITextField+Extension.swift in Sources */,
 				2F423FCE29FC7ABD00203E59 /* UICollectionView+Extension.swift in Sources */,
 				2FEBBA5929998EEF0021FE87 /* UIStackView+Extension.swift in Sources */,
+				2F423FF729FF916200203E59 /* ProfileViewController.swift in Sources */,
 				2FEB1C2229995DD8006C3238 /* LocalizebleViewController.swift in Sources */,
 				2F423FE229FD996600203E59 /* TabItemConfigurable.swift in Sources */,
 			);

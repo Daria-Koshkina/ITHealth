@@ -111,6 +111,44 @@ class ProfileService {
     }
   }
   
+  func update(email: String,
+              nick: String,
+              role: Role,
+              fullName: String,
+              birthday: String,
+              gender: Gender,
+              bloodType: HKBloodType,
+              averagePressure: Double,
+              workHoursCount: Int, completion: @escaping (_ response: Result<User , Error>) -> Void) {
+    AuthAPI.shared.update(email: email, nick: nick, fullName: fullName, birthday: birthday, averagePressure: averagePressure, workHoursCount: workHoursCount, role: role, gender: gender, bloodType: bloodType) { result in
+      switch result {
+      case .success(let user):
+        self.user = user
+        completion(.success(user))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
+  
+  func changePassword(password: String, completion: @escaping (_ response: Result<User , Error>) -> Void) {
+    guard let user = ProfileService.shared.user else {
+      completion(.failure(ServerError.unknown))
+      return
+    }
+    let format = DateFormatter()
+    format.dateFormat = "yyyy-MM-dd"
+    AuthAPI.shared.changePassword(email: user.email, nick: user.nick, fullName: user.fullName, birthday: format.string(from: user.birthday), averagePressure: user.averagePressure, workHoursCount: user.workHoursCount, role: user.role, gender: user.gender, bloodType: user.bloodType, password: password) { result in
+      switch result {
+      case .success(let user):
+        self.user = user
+        completion(.success(user))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
+  
   func logout() {
     resetUser()
   }

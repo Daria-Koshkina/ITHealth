@@ -69,7 +69,7 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
     selfView.pressureTextField.inputPlaceholder = localizator.localizedString("registration.pressure")
     selfView.workHoursTextField.title = localizator.localizedString("registration.hours")
     selfView.workHoursTextField.inputPlaceholder = localizator.localizedString("registration.hours")
-    selfView.registerButton.setTitle("registration.button", for: .normal)
+    selfView.registerButton.setTitle(localizator.localizedString("registration.button"), for: .normal)
   }
   
   private func addObservers() {
@@ -93,6 +93,7 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
     selfView.bloodTypeCollection.dataSource = self
     selfView.roleCollectionView.delegate = self
     selfView.roleCollectionView.dataSource = self
+    selfView.roleLabel.isHidden = true
     selfView.bloodTypeCollection.register(LabelCollectionViewCell.self)
     selfView.genderCollection.register(LabelCollectionViewCell.self)
     selfView.roleCollectionView.register(LabelCollectionViewCell.self)

@@ -17,12 +17,59 @@ class SettingsCoordinator: Coordinator {
   weak var output: SettingsCoordinatorOutput?
   
   // MARK: - Private variables
-  
+  private weak var settingsViewController: SettingsViewController?
   
   // MARK: - Start
   override func start(completion: (() -> Void)? = nil) {
-    let vc = InitViewController()
-    vc.view.backgroundColor = .magenta
+    let settingsViewController = SettingsViewController()
+    settingsViewController.output = self
+    self.settingsViewController = settingsViewController
+    navigationController.pushViewController(settingsViewController, animated: true)
+  }
+}
+
+extension SettingsCoordinator: SettingsViewControllerOutput {
+  func showPassword(from viewController: SettingsViewController) {
+    let vc = ChangePasswordViewController()
+    vc.output = self
     navigationController.pushViewController(vc, animated: true)
+  }
+  
+  func showProfile(from viewController: SettingsViewController) {
+    let vc = ProfileViewController()
+    vc.output = self
+    navigationController.pushViewController(vc, animated: true)
+  }
+  
+  func showHealth(from viewController: SettingsViewController) {
+    
+  }
+  
+  func showWork(from viewController: SettingsViewController) {
+    
+  }
+  
+  func showLanguage(from viewController: SettingsViewController) {
+    let vc = LanguageViewController()
+    vc.output = self
+    navigationController.pushViewController(vc, animated: true)
+  }
+}
+
+extension SettingsCoordinator: LanguageViewControllerOutput {
+  func back(from: LanguageViewController) {
+    navigationController.popViewController(animated: true)
+  }
+}
+
+extension SettingsCoordinator: ProfileViewControllerOutput {
+  func back(from: ProfileViewController) {
+    navigationController.popViewController(animated: true)
+  }
+}
+
+extension SettingsCoordinator: ChangePasswordViewControllerOutput {
+  func back(from: ChangePasswordViewController) {
+    navigationController.popViewController(animated: true)
   }
 }

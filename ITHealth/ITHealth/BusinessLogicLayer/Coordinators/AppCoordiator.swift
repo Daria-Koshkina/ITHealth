@@ -41,10 +41,15 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator: AuthCoordinatorOutput {
   func wasAuthorized(from: AuthCoordinator) {
+    navigationController.viewControllers.removeAll(where: { $0.isKind(of: AuthViewController.self) })
     showMain()
   }
 }
 
 extension AppCoordinator: MainTabBarCoordinatorOutput {
-  
+  func userDidLogout(from: MainTabBarCoordinator) {
+    mainTabBarCoordinator?.clearControllers {
+      self.showAuth()
+    }
+  }
 }

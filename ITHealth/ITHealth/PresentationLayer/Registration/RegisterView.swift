@@ -25,6 +25,7 @@ class RegisterView: InitView {
   let bloodTypeCollection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
   let genderLabel = UILabel()
   let bloodTypeLabel = UILabel()
+  let roleLabel = UILabel()
   let registerButton = PrimaryButton()
   let datePicker = UIDatePicker()
   
@@ -37,6 +38,7 @@ class RegisterView: InitView {
     configureRoleCollectionView()
     configureGenderLabel()
     configureBloodTypeLabel()
+    configureRoleLabel()
     configureRegisterButton()
   }
   
@@ -82,6 +84,7 @@ class RegisterView: InitView {
     stackView.addArrangedSubview(birthdayTextField)
     stackView.addArrangedSubview(pressureTextField)
     stackView.addArrangedSubview(workHoursTextField)
+    stackView.addArrangedSubview(roleLabel)
     stackView.addArrangedSubview(roleCollectionView)
     stackView.addArrangedSubview(genderLabel)
     stackView.addArrangedSubview(genderCollection)
@@ -99,6 +102,7 @@ class RegisterView: InitView {
     birthdayTextField.inputView = datePicker
     datePicker.datePickerMode = .date
     datePicker.preferredDatePickerStyle = .wheels
+    datePicker.maximumDate = Date().addYears(-18)
   }
   
   private func configureRoleCollectionView() {
@@ -128,6 +132,14 @@ class RegisterView: InitView {
     bloodTypeLabel.font = Fonts.semibold16
     bloodTypeLabel.textColor = Colors.blueDark
     bloodTypeLabel.snp.makeConstraints { make in
+      make.height.equalTo(40)
+    }
+  }
+  
+  private func configureRoleLabel() {
+    roleLabel.font = Fonts.semibold16
+    roleLabel.textColor = Colors.blueDark
+    roleLabel.snp.makeConstraints { make in
       make.height.equalTo(40)
     }
   }
