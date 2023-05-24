@@ -53,6 +53,7 @@ class LanguageViewController: LocalizableViewController, NavigationButtoned, Err
   }
   
   private func setupNavBar() {
+    setNavigationButton(#selector(didTapBack), button: ButtonsFactory.getNavigationBarBackButton())
     (navigationController as? MainNavigationController)?.setupSelfConfiguration(with: .white(withLine: false))
   }
   
@@ -91,6 +92,11 @@ class LanguageViewController: LocalizableViewController, NavigationButtoned, Err
     if LocalizationService.shared.language != language {
       LocalizationService.shared.language = language
     }
+    output?.back(from: self)
+  }
+  
+  @objc
+  private func didTapBack() {
     output?.back(from: self)
   }
 }

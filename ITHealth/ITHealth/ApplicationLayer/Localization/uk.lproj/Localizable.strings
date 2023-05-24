@@ -28,6 +28,7 @@
 "registration.button" = "Зареєструватися";
 "gender.male" = "Чоловік";
 "gender.female" = "Жінка";
+"registration.navbar" = "Ваші дані";
 
 "settings.title" = "Налаштування";
 "tests.title" = "Тести";
@@ -56,3 +57,19 @@
 "change_password.textfield.title" = "Новий пароль";
 "change_password.textfield.placeholder" = "Новий пароль";
 "change_password.button" = "Зберегти";
+
+"health.effeciency" = "Продуктивність";
+"health.stress" = "Стрес";
+"health.test" = "Тести";
+"health.work" = "Робота";
+"health.navbar" = "Здоровʼя";
+"stress.chart.stress_bound" = "Границя стресу";
+"stress.chart.top" = "Максимальний рівень стресу";
+"health.stress.title" = "Ваша статистика стресу";
+"health.stress.prev" = "Минулий";
+"health.stress.next" = "Наступний";
+
+"company_code.navbar" = "Приєднайтеся до компанії";
+"company_code.textfield.title" = "Введіть код компанії";
+"company_code.textfield.placeholder" = "Код компанії";
+"company_code.button" = "Продовжити";

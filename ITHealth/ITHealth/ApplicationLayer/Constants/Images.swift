@@ -22,4 +22,9 @@ enum Images {
   static let language = #imageLiteral(resourceName: "language")
   static let logout = #imageLiteral(resourceName: "exit")
   static let lock = #imageLiteral(resourceName: "lock")
+  static let efficiency = #imageLiteral(resourceName: "efficiency")
+  static let stress = #imageLiteral(resourceName: "stress")
+  static let testHealth = #imageLiteral(resourceName: "testHealth")
+  static let workHealth = #imageLiteral(resourceName: "work")
+  static let back = #imageLiteral(resourceName: "back")
 }

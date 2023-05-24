@@ -54,10 +54,7 @@ class AuthAPI: NetworkAPI {
   
   func register(email: String,
                 password: String,
-                nick: String,
-                role: Role,
                 fullName: String,
-                birthday: String,
                 gender: Gender,
                 bloodType: HKBloodType,
                 averagePressure: Double,
@@ -67,10 +64,8 @@ class AuthAPI: NetworkAPI {
       return
     }
     let params: [String: Any] = [NetworkRequestKey.Auth.email: email,
-                                 NetworkRequestKey.Auth.userName: nick,
-                                 NetworkRequestKey.Auth.role: role.rawValue,
+                                 NetworkRequestKey.Auth.role: "User",
                                  NetworkRequestKey.Auth.fullName: fullName,
-                                 NetworkRequestKey.Auth.birthday: birthday,
                                  NetworkRequestKey.Auth.gender: gender.rawValue,
                                  NetworkRequestKey.Auth.bloodType: bloodType.rawValue,
                                  NetworkRequestKey.Auth.averagePressure: averagePressure,
@@ -92,12 +87,9 @@ class AuthAPI: NetworkAPI {
   }
   
   func update(email: String,
-              nick: String,
               fullName: String,
-              birthday: String,
               averagePressure: Double,
               workHoursCount: Int,
-              role: Role,
               gender: Gender,
               bloodType: HKBloodType,
               completion: @escaping (_ response: Result<User, Error>) -> Void) {
@@ -106,10 +98,7 @@ class AuthAPI: NetworkAPI {
       return
     }
     let params: [String: Any] = [NetworkRequestKey.Auth.email: email,
-                                 NetworkRequestKey.Auth.userName: nick,
-                                 NetworkRequestKey.Auth.role: role.rawValue,
                                  NetworkRequestKey.Auth.fullName: fullName,
-                                 NetworkRequestKey.Auth.birthday: birthday,
                                  NetworkRequestKey.Auth.gender: gender.rawValue,
                                  NetworkRequestKey.Auth.bloodType: bloodType.rawValue,
                                  NetworkRequestKey.Auth.averagePressure: averagePressure,
@@ -134,12 +123,9 @@ class AuthAPI: NetworkAPI {
   }
   
   func changePassword(email: String,
-              nick: String,
               fullName: String,
-              birthday: String,
               averagePressure: Double,
               workHoursCount: Int,
-              role: Role,
               gender: Gender,
               bloodType: HKBloodType,
                       password: String,
@@ -149,10 +135,7 @@ class AuthAPI: NetworkAPI {
       return
     }
     let params: [String: Any] = [NetworkRequestKey.Auth.email: email,
-                                 NetworkRequestKey.Auth.userName: nick,
-                                 NetworkRequestKey.Auth.role: role.rawValue,
                                  NetworkRequestKey.Auth.fullName: fullName,
-                                 NetworkRequestKey.Auth.birthday: birthday,
                                  NetworkRequestKey.Auth.gender: gender.rawValue,
                                  NetworkRequestKey.Auth.bloodType: bloodType.rawValue,
                                  NetworkRequestKey.Auth.averagePressure: averagePressure,

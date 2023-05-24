@@ -14,20 +14,15 @@ class RegisterView: InitView {
   private let stackView = UIStackView()
   let emailTextField = InputView()
   let passwordTextField = InputView()
-  let nickTextField = InputView()
   let nameTextField = InputView()
   let surnameTextField = InputView()
-  let birthdayTextField = InputView()
   let pressureTextField = InputView()
   let workHoursTextField = InputView()
-  let roleCollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
   let genderCollection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
   let bloodTypeCollection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
   let genderLabel = UILabel()
   let bloodTypeLabel = UILabel()
-  let roleLabel = UILabel()
   let registerButton = PrimaryButton()
-  let datePicker = UIDatePicker()
   
   override func initConfigure() {
     super.initConfigure()
@@ -38,7 +33,6 @@ class RegisterView: InitView {
     configureRoleCollectionView()
     configureGenderLabel()
     configureBloodTypeLabel()
-    configureRoleLabel()
     configureRegisterButton()
   }
   
@@ -78,14 +72,10 @@ class RegisterView: InitView {
     }
     stackView.addArrangedSubview(emailTextField)
     stackView.addArrangedSubview(passwordTextField)
-    stackView.addArrangedSubview(nickTextField)
     stackView.addArrangedSubview(nameTextField)
     stackView.addArrangedSubview(surnameTextField)
-    stackView.addArrangedSubview(birthdayTextField)
     stackView.addArrangedSubview(pressureTextField)
     stackView.addArrangedSubview(workHoursTextField)
-    stackView.addArrangedSubview(roleLabel)
-    stackView.addArrangedSubview(roleCollectionView)
     stackView.addArrangedSubview(genderLabel)
     stackView.addArrangedSubview(genderCollection)
     stackView.addArrangedSubview(bloodTypeLabel)
@@ -94,22 +84,14 @@ class RegisterView: InitView {
   }
   
   private func configureTextFields() {
-    [emailTextField, passwordTextField, nickTextField, nameTextField, surnameTextField, birthdayTextField, pressureTextField, workHoursTextField].forEach { view in
+    [emailTextField, passwordTextField, nameTextField, surnameTextField, pressureTextField, workHoursTextField].forEach { view in
       view.snp.makeConstraints { make in
         make.height.equalTo(56)
       }
     }
-    birthdayTextField.inputView = datePicker
-    datePicker.datePickerMode = .date
-    datePicker.preferredDatePickerStyle = .wheels
-    datePicker.maximumDate = Date().addYears(-18)
   }
   
   private func configureRoleCollectionView() {
-    roleCollectionView.backgroundColor = .white
-    roleCollectionView.snp.makeConstraints { make in
-      make.height.equalTo(56)
-    }
     bloodTypeCollection.backgroundColor = .white
     bloodTypeCollection.snp.makeConstraints { make in
       make.height.equalTo(56)
@@ -132,14 +114,6 @@ class RegisterView: InitView {
     bloodTypeLabel.font = Fonts.semibold16
     bloodTypeLabel.textColor = Colors.blueDark
     bloodTypeLabel.snp.makeConstraints { make in
-      make.height.equalTo(40)
-    }
-  }
-  
-  private func configureRoleLabel() {
-    roleLabel.font = Fonts.semibold16
-    roleLabel.textColor = Colors.blueDark
-    roleLabel.snp.makeConstraints { make in
       make.height.equalTo(40)
     }
   }

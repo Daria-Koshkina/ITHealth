@@ -41,6 +41,16 @@
 		2F7862BC29AAAF6F00463DD0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7862BB29AAAF6F00463DD0 /* RegisterViewController.swift */; };
 		2F7862BE29AAAF7C00463DD0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7862BD29AAAF7C00463DD0 /* RegisterView.swift */; };
 		2F7862C029AAAFD700463DD0 /* NavigationButtoned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7862BF29AAAFD700463DD0 /* NavigationButtoned.swift */; };
+		2F78E9ED2A0D8FB100A55A3D /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9EC2A0D8FB100A55A3D /* HealthViewController.swift */; };
+		2F78E9EF2A0D90B000A55A3D /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9EE2A0D90B000A55A3D /* HealthView.swift */; };
+		2F78E9F12A0D910D00A55A3D /* HealthItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9F02A0D910D00A55A3D /* HealthItemView.swift */; };
+		2F78E9F42A0E12A400A55A3D /* ButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9F32A0E12A400A55A3D /* ButtonsFactory.swift */; };
+		2F78E9F62A0E15C500A55A3D /* StressChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9F52A0E15C400A55A3D /* StressChartView.swift */; };
+		2F78E9F82A0E168400A55A3D /* ChartBoundaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9F72A0E168400A55A3D /* ChartBoundaryView.swift */; };
+		2F78E9FA2A0E16C800A55A3D /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9F92A0E16C800A55A3D /* DashedView.swift */; };
+		2F78E9FC2A0E184000A55A3D /* DateFormatsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9FB2A0E184000A55A3D /* DateFormatsFactory.swift */; };
+		2F78E9FE2A0E187700A55A3D /* StringComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9FD2A0E187700A55A3D /* StringComposer.swift */; };
+		2F78EA002A0E19B100A55A3D /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78E9FF2A0E19B100A55A3D /* ViewsFactory.swift */; };
 		2F892F82299D7ABE00EDC260 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F81299D7ABE00EDC260 /* Validator.swift */; };
 		2F892F84299D7B2300EDC260 /* RegexValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F83299D7B2300EDC260 /* RegexValidator.swift */; };
 		2F892F86299D7B6600EDC260 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F85299D7B6600EDC260 /* String+Extension.swift */; };
@@ -50,6 +60,7 @@
 		2F892F8E299D8A1F00EDC260 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F8D299D8A1F00EDC260 /* CoreDataService.swift */; };
 		2F892F90299D8A6400EDC260 /* UserMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F8F299D8A6400EDC260 /* UserMO.swift */; };
 		2F892F92299D8A9900EDC260 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F91299D8A9900EDC260 /* User.swift */; };
+		2FCC99EC2A1570E800D4511E /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC99EB2A1570E800D4511E /* CodeViewController.swift */; };
 		2FEB1BFF299954B4006C3238 /* ITHealth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB1BFD299954B4006C3238 /* ITHealth.xcdatamodeld */; };
 		2FEB1C03299954B7006C3238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FEB1C02299954B7006C3238 /* Assets.xcassets */; };
 		2FEB1C15299959AF006C3238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB1C14299959AF006C3238 /* AppDelegate.swift */; };
@@ -126,6 +137,16 @@
 		2F7862BB29AAAF6F00463DD0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2F7862BD29AAAF7C00463DD0 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		2F7862BF29AAAFD700463DD0 /* NavigationButtoned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtoned.swift; sourceTree = "<group>"; };
+		2F78E9EC2A0D8FB100A55A3D /* HealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
+		2F78E9EE2A0D90B000A55A3D /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		2F78E9F02A0D910D00A55A3D /* HealthItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthItemView.swift; sourceTree = "<group>"; };
+		2F78E9F32A0E12A400A55A3D /* ButtonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsFactory.swift; sourceTree = "<group>"; };
+		2F78E9F52A0E15C400A55A3D /* StressChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StressChartView.swift; sourceTree = "<group>"; };
+		2F78E9F72A0E168400A55A3D /* ChartBoundaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBoundaryView.swift; sourceTree = "<group>"; };
+		2F78E9F92A0E16C800A55A3D /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
+		2F78E9FB2A0E184000A55A3D /* DateFormatsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatsFactory.swift; sourceTree = "<group>"; };
+		2F78E9FD2A0E187700A55A3D /* StringComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringComposer.swift; sourceTree = "<group>"; };
+		2F78E9FF2A0E19B100A55A3D /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		2F892F81299D7ABE00EDC260 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		2F892F83299D7B2300EDC260 /* RegexValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexValidator.swift; sourceTree = "<group>"; };
 		2F892F85299D7B6600EDC260 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -135,6 +156,7 @@
 		2F892F8D299D8A1F00EDC260 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		2F892F8F299D8A6400EDC260 /* UserMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMO.swift; sourceTree = "<group>"; };
 		2F892F91299D8A9900EDC260 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2FCC99EB2A1570E800D4511E /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		2FEB1BF6299954B4006C3238 /* ITHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FEB1BFE299954B4006C3238 /* ITHealth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITHealth.xcdatamodel; sourceTree = "<group>"; };
 		2FEB1C02299954B7006C3238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,14 +283,46 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		2F78E9EB2A0D8F9E00A55A3D /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				2F78E9EC2A0D8FB100A55A3D /* HealthViewController.swift */,
+				2F78E9EE2A0D90B000A55A3D /* HealthView.swift */,
+				2F78E9F02A0D910D00A55A3D /* HealthItemView.swift */,
+				2F78E9F52A0E15C400A55A3D /* StressChartView.swift */,
+				2F78E9F72A0E168400A55A3D /* ChartBoundaryView.swift */,
+				2F78E9F92A0E16C800A55A3D /* DashedView.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		2F78E9F22A0E129700A55A3D /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2F78E9F32A0E12A400A55A3D /* ButtonsFactory.swift */,
+				2F78E9FB2A0E184000A55A3D /* DateFormatsFactory.swift */,
+				2F78E9FF2A0E19B100A55A3D /* ViewsFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		2F892F80299D7AAE00EDC260 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				2F892F81299D7ABE00EDC260 /* Validator.swift */,
 				2F892F83299D7B2300EDC260 /* RegexValidator.swift */,
 				2F423FEC29FF055C00203E59 /* LabelConfigurator.swift */,
+				2F78E9FD2A0E187700A55A3D /* StringComposer.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2FCC99EA2A1570BC00D4511E /* CodeCompany */ = {
+			isa = PBXGroup;
+			children = (
+				2FCC99EB2A1570E800D4511E /* CodeViewController.swift */,
+			);
+			path = CodeCompany;
 			sourceTree = "<group>";
 		};
 		2FEB1BED299954B4006C3238 = {
@@ -313,6 +367,7 @@
 		2FEB1C0E29995674006C3238 /* BusinessLogicLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2F78E9F22A0E129700A55A3D /* Factories */,
 				2F892F80299D7AAE00EDC260 /* Helpers */,
 				2FEBBA692999941B0021FE87 /* Network */,
 				2FEBBA5729998EDA0021FE87 /* Extentions */,
@@ -327,6 +382,8 @@
 		2FEB1C0F2999567E006C3238 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2FCC99EA2A1570BC00D4511E /* CodeCompany */,
+				2F78E9EB2A0D8F9E00A55A3D /* Health */,
 				2F423FFA29FFE03700203E59 /* Change password */,
 				2F423FF529FF912E00203E59 /* Profile */,
 				2F423FEE29FF176700203E59 /* Language */,
@@ -686,8 +743,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCC99EC2A1570E800D4511E /* CodeViewController.swift in Sources */,
 				2F7862C029AAAFD700463DD0 /* NavigationButtoned.swift in Sources */,
 				2F423FEB29FF050400203E59 /* ProfileItemView.swift in Sources */,
+				2F78E9FE2A0E187700A55A3D /* StringComposer.swift in Sources */,
 				2F423FF029FF178400203E59 /* LanguageViewController.swift in Sources */,
 				2F423FD229FD8A2200203E59 /* MainTabBarCoordinator.swift in Sources */,
 				2F423FD529FD8D2D00203E59 /* MainTabBarController.swift in Sources */,
@@ -699,8 +758,10 @@
 				2F02583C29A2B4C50098190B /* AuthAPI.swift in Sources */,
 				2FEB1C1A29995CB5006C3238 /* Coordinator.swift in Sources */,
 				2FEBBA68299993D80021FE87 /* ServerError.swift in Sources */,
+				2F78E9FC2A0E184000A55A3D /* DateFormatsFactory.swift in Sources */,
 				2F423FE929FF033300203E59 /* ContentScrollView.swift in Sources */,
 				2F892F90299D8A6400EDC260 /* UserMO.swift in Sources */,
+				2F78E9F12A0D910D00A55A3D /* HealthItemView.swift in Sources */,
 				2FEBBA5229998E570021FE87 /* AlertViewController.swift in Sources */,
 				2F02583429A2AFBA0098190B /* Notification+Extension.swift in Sources */,
 				2F423FF929FFCF8A00203E59 /* Date+Extension.swift in Sources */,
@@ -710,10 +771,12 @@
 				2F892F8A299D87AB00EDC260 /* UIViewController+Extension.swift in Sources */,
 				2FEBBA642999903C0021FE87 /* UIColor+Extension.swift in Sources */,
 				2FEBBA6B299994290021FE87 /* NetworkKeys.swift in Sources */,
+				2F78E9FA2A0E16C800A55A3D /* DashedView.swift in Sources */,
 				2F423FF429FF199200203E59 /* BaseTableViewCell.swift in Sources */,
 				2F423FE529FEFEA200203E59 /* SettingsViewController.swift in Sources */,
 				2FEB1C2C29995E0F006C3238 /* InitView.swift in Sources */,
 				2FEBBA662999915B0021FE87 /* Fonts.swift in Sources */,
+				2F78E9EF2A0D90B000A55A3D /* HealthView.swift in Sources */,
 				2FEB1C2329995DD8006C3238 /* InitViewController.swift in Sources */,
 				2F423FD029FC7AEA00203E59 /* UITableView+Extension.swift in Sources */,
 				2F423FD929FD977400203E59 /* SettingsCoordinator.swift in Sources */,
@@ -732,6 +795,7 @@
 				2F423FC729FC076A00203E59 /* HealthService.swift in Sources */,
 				2F892F8C299D88F700EDC260 /* Constants.swift in Sources */,
 				2FEBBA5029998E320021FE87 /* InfoAlertView.swift in Sources */,
+				2F78E9F42A0E12A400A55A3D /* ButtonsFactory.swift in Sources */,
 				2F423FED29FF055C00203E59 /* LabelConfigurator.swift in Sources */,
 				2F7862BC29AAAF6F00463DD0 /* RegisterViewController.swift in Sources */,
 				2F423FF229FF196D00203E59 /* LanguageTableViewCell.swift in Sources */,
@@ -743,6 +807,7 @@
 				2F892F92299D8A9900EDC260 /* User.swift in Sources */,
 				2FEB1C3029995E5F006C3238 /* Localizator.swift in Sources */,
 				2F423FFC29FFE04E00203E59 /* ChangePasswordViewController.swift in Sources */,
+				2F78E9F62A0E15C500A55A3D /* StressChartView.swift in Sources */,
 				2FEBBA46299988BB0021FE87 /* AuthCoordinator.swift in Sources */,
 				2F892F82299D7ABE00EDC260 /* Validator.swift in Sources */,
 				2F02583829A2B31D0098190B /* Result.swift in Sources */,
@@ -753,6 +818,7 @@
 				2FEB1C17299959E4006C3238 /* AppConfigurator.swift in Sources */,
 				2FEB1C1C29995CCD006C3238 /* AppCoordiator.swift in Sources */,
 				2F423FE029FD993F00203E59 /* TabBarRootNavigationController.swift in Sources */,
+				2F78E9F82A0E168400A55A3D /* ChartBoundaryView.swift in Sources */,
 				2F7862B929AAAA1800463DD0 /* UINavigationViewController+Extension.swift in Sources */,
 				2F02583629A2B0B00098190B /* NetworkAPI.swift in Sources */,
 				2F423FE729FF02DA00203E59 /* SettingsView.swift in Sources */,
@@ -761,8 +827,10 @@
 				2F892F88299D7B8700EDC260 /* UITextField+Extension.swift in Sources */,
 				2F423FCE29FC7ABD00203E59 /* UICollectionView+Extension.swift in Sources */,
 				2FEBBA5929998EEF0021FE87 /* UIStackView+Extension.swift in Sources */,
+				2F78EA002A0E19B100A55A3D /* ViewsFactory.swift in Sources */,
 				2F423FF729FF916200203E59 /* ProfileViewController.swift in Sources */,
 				2FEB1C2229995DD8006C3238 /* LocalizebleViewController.swift in Sources */,
+				2F78E9ED2A0D8FB100A55A3D /* HealthViewController.swift in Sources */,
 				2F423FE229FD996600203E59 /* TabItemConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

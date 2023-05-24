@@ -28,6 +28,7 @@
 "registration.button" = "Register";
 "gender.male" = "Male";
 "gender.female" = "Female";
+"registration.navbar" = "Your personal data";
 
 "settings.title" = "Settings";
 "tests.title" = "Tests";
@@ -56,3 +57,19 @@
 "change_password.textfield.title" = "New password";
 "change_password.textfield.placeholder" = "New password";
 "change_password.button" = "Save";
+
+"health.effeciency" = "Effeciency";
+"health.stress" = "Stress";
+"health.test" = "Tests";
+"health.work" = "Work";
+"health.navbar" = "Health";
+"stress.chart.stress_bound" = "Stress bound";
+"stress.chart.top" = "Your max stress level";
+"health.stress.title" = "Your Stress Statistic";
+"health.stress.prev" = "Previous";
+"health.stress.next" = "Next";
+
+"company_code.navbar" = "Join your company";
+"company_code.textfield.title" = "Enter your company code";
+"company_code.textfield.placeholder" = "Company code";
+"company_code.button" = "Continue";

@@ -13,7 +13,7 @@ protocol ChangePasswordViewControllerOutput: AnyObject {
   func back(from: ChangePasswordViewController)
 }
 
-class ChangePasswordViewController: LocalizableViewController, ErrorAlertDisplayable {
+class ChangePasswordViewController: LocalizableViewController, ErrorAlertDisplayable, NavigationButtoned {
   
   weak var output: ChangePasswordViewControllerOutput?
   
@@ -26,6 +26,7 @@ class ChangePasswordViewController: LocalizableViewController, ErrorAlertDisplay
   override func initConfigure() {
     super.initConfigure()
     localize()
+    configureNavBar()
     selfView.passwordTextField.inputViewDelegate = self
     selfView.button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     updateContinueButton()
@@ -37,6 +38,10 @@ class ChangePasswordViewController: LocalizableViewController, ErrorAlertDisplay
     selfView.passwordTextField.title = localizator.localizedString("change_password.textfield.title")
     selfView.passwordTextField.inputPlaceholder = localizator.localizedString("change_password.textfield.placeholder")
     selfView.button.setTitle(localizator.localizedString("change_password.button"), for: .normal)
+  }
+  
+  private func configureNavBar() {
+    setNavigationButton(#selector(didTapBack), button: ButtonsFactory.getNavigationBarBackButton(), side: .left)
   }
   
   private func updateContinueButton() {
@@ -69,6 +74,11 @@ class ChangePasswordViewController: LocalizableViewController, ErrorAlertDisplay
         }
       }
     }
+  }
+  
+  @objc
+  private func didTapBack() {
+    output?.back(from: self)
   }
 }
 

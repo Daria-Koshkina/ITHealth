@@ -81,15 +81,12 @@ class ProfileService {
   
   func register(email: String,
                 password: String,
-                nick: String,
-                role: Role,
                 fullName: String,
-                birthday: String,
                 gender: Gender,
                 bloodType: HKBloodType,
                 averagePressure: Double,
                 workHoursCount: Int, completion: @escaping (_ response: Result<Any? , Error>) -> Void) {
-    AuthAPI.shared.register(email: email, password: password, nick: nick, role: role, fullName: fullName, birthday: birthday, gender: gender, bloodType: bloodType, averagePressure: averagePressure, workHoursCount: workHoursCount) { result in
+    AuthAPI.shared.register(email: email, password: password, fullName: fullName, gender: gender, bloodType: bloodType, averagePressure: averagePressure, workHoursCount: workHoursCount) { result in
       switch result {
       case .success:
         completion(.success(nil))
@@ -112,15 +109,12 @@ class ProfileService {
   }
   
   func update(email: String,
-              nick: String,
-              role: Role,
               fullName: String,
-              birthday: String,
               gender: Gender,
               bloodType: HKBloodType,
               averagePressure: Double,
               workHoursCount: Int, completion: @escaping (_ response: Result<User , Error>) -> Void) {
-    AuthAPI.shared.update(email: email, nick: nick, fullName: fullName, birthday: birthday, averagePressure: averagePressure, workHoursCount: workHoursCount, role: role, gender: gender, bloodType: bloodType) { result in
+    AuthAPI.shared.update(email: email, fullName: fullName, averagePressure: averagePressure, workHoursCount: workHoursCount, gender: gender, bloodType: bloodType) { result in
       switch result {
       case .success(let user):
         self.user = user
@@ -138,7 +132,7 @@ class ProfileService {
     }
     let format = DateFormatter()
     format.dateFormat = "yyyy-MM-dd"
-    AuthAPI.shared.changePassword(email: user.email, nick: user.nick, fullName: user.fullName, birthday: format.string(from: user.birthday), averagePressure: user.averagePressure, workHoursCount: user.workHoursCount, role: user.role, gender: user.gender, bloodType: user.bloodType, password: password) { result in
+    AuthAPI.shared.changePassword(email: user.email, fullName: user.fullName, averagePressure: user.averagePressure, workHoursCount: user.workHoursCount, gender: user.gender, bloodType: user.bloodType, password: password) { result in
       switch result {
       case .success(let user):
         self.user = user

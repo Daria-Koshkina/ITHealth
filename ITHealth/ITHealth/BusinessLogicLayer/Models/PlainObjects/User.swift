@@ -58,71 +58,54 @@ enum Gender: Int, CaseIterable {
   }
 }
 
-enum Role: String, CaseIterable {
-  case user = "User"
-  case administrator = "Administrator"
-  case globalAdministrator = "GlobalAdministrator"
-}
-
 struct User {
   let id: Int
-  let nick: String
   let email: String
-  let role: Role
   let fullName: String
-  let birthday: Date
   let gender: Gender
   let bloodType: HKBloodType
   let averagePressure: Double
   let workHoursCount: Int
+  let connectedToCompany: Bool
   
   init?(json: JSON) {
     let dateFormat = DateFormatter()
     dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     guard let dictionary = json.dictionary,
           let id = dictionary[NetworkResponseKey.User.id]?.intValue,
-          let nick = dictionary[NetworkResponseKey.User.userName]?.stringValue,
           let email = dictionary[NetworkResponseKey.User.email]?.stringValue,
-          let role = Role(rawValue: dictionary[NetworkResponseKey.User.role]?.stringValue ?? ""),
           let fullName = dictionary[NetworkResponseKey.User.fullName]?.stringValue,
-          let birthday = dateFormat.date(from: dictionary[NetworkResponseKey.User.birthday]?.stringValue ?? ""),
           let gender = Gender(rawValue: dictionary[NetworkResponseKey.User.gender]?.intValue ?? .zero),
           let bloodType = HKBloodType(rawValue: dictionary[NetworkResponseKey.User.bloodType]?.intValue ?? .zero),
           let averagePressure = dictionary[NetworkResponseKey.User.averagePressure]?.doubleValue,
-          let workHoursCount = dictionary[NetworkResponseKey.User.workHoursCount]?.intValue else {
+          let workHoursCount = dictionary[NetworkResponseKey.User.workHoursCount]?.intValue,
+          let connectedToCompany = dictionary[NetworkResponseKey.User.connectedToCompany]?.bool else {
       return nil
     }
     self.id = id
-    self.nick = nick
     self.email = email
-    self.role = role
     self.fullName = fullName
-    self.birthday = birthday
     self.gender = gender
     self.bloodType = bloodType
     self.averagePressure = averagePressure
     self.workHoursCount = workHoursCount
+    self.connectedToCompany = connectedToCompany
   }
   
   init?(userMO: UserMO) {
-    guard let nick = userMO.nick,
-          let email = userMO.email,
+    guard let email = userMO.email,
           let fullName = userMO.fullName,
-          let birthday = userMO.birthday,
           let gender = Gender(rawValue: Int(userMO.gender)),
-          let role = Role(rawValue: userMO.role ?? ""),
           let bloodType = HKBloodType(rawValue: Int(userMO.bloodType)) else {
       return nil
     }
     self.id = Int(userMO.id)
-    self.nick = nick
     self.email = email
-    self.role = role
     self.fullName = fullName
-    self.birthday = birthday
     self.gender = gender
     self.bloodType = bloodType
     self.averagePressure = userMO.averagePressure
     self.workHoursCount = Int(userMO.workHoursCount)
+    self.connectedToCompany = userMO.connectedToCompany
   }
 }

@@ -28,6 +28,7 @@ enum NetworkResponseKey {
     static let bloodType = "bloodType"
     static let averagePressure = "averagePressure"
     static let workHoursCount = "workHoursCount"
+    static let connectedToCompany = "connectedToCompany"
   }
   
   static let accessToken = "token"

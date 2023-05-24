@@ -1,5 +1,9 @@
 PODS:
   - Alamofire (5.6.4)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - ESTabBarController-swift (2.6.5)
   - FlagKit (2.2)
   - KeychainAccess (4.2.2)
@@ -7,11 +11,13 @@ PODS:
   - ReachabilitySwift (5.0.0)
   - SnapKit (5.6.0)
   - SVProgressHUD (2.2.5)
+  - SwiftAlgorithms (1.0.0)
   - SwiftLint (0.50.3)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - Charts (from `https://github.com/AndreyKoshkinBrander/Charts.git`, branch `bar-chart-bottom-border`)
   - ESTabBarController-swift (~> 2.6.4)
   - FlagKit
   - KeychainAccess
@@ -32,11 +38,23 @@ SPEC REPOS:
     - ReachabilitySwift
     - SnapKit
     - SVProgressHUD
+    - SwiftAlgorithms
     - SwiftLint
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  Charts:
+    :branch: bar-chart-bottom-border
+    :git: https://github.com/AndreyKoshkinBrander/Charts.git
+
+CHECKOUT OPTIONS:
+  Charts:
+    :commit: 71acac364f3d7ae616a3ae0a13be4e6bcef117e3
+    :git: https://github.com/AndreyKoshkinBrander/Charts.git
+
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   ESTabBarController-swift: f31cd3e30bde23619d3b300266f27864d96ffb58
   FlagKit: eca7dc89064b0c986302ba9acefad1bf80a435b1
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
@@ -44,9 +62,10 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: a17b063fc7b3f40643e8761f6ec5c09136bc8fb6
+PODFILE CHECKSUM: 6dfacc1fc8eb03bdc53d600a594eec774239b578
 
 COCOAPODS: 1.11.3

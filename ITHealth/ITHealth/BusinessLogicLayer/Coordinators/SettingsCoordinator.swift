@@ -42,7 +42,9 @@ extension SettingsCoordinator: SettingsViewControllerOutput {
   }
   
   func showHealth(from viewController: SettingsViewController) {
-    
+    let vc = HealthViewController()
+    vc.output = self
+    navigationController.pushViewController(vc, animated: true)
   }
   
   func showWork(from viewController: SettingsViewController) {
@@ -70,6 +72,12 @@ extension SettingsCoordinator: ProfileViewControllerOutput {
 
 extension SettingsCoordinator: ChangePasswordViewControllerOutput {
   func back(from: ChangePasswordViewController) {
+    navigationController.popViewController(animated: true)
+  }
+}
+
+extension SettingsCoordinator: HealthViewControllerOutput {
+  func back(from: HealthViewController) {
     navigationController.popViewController(animated: true)
   }
 }

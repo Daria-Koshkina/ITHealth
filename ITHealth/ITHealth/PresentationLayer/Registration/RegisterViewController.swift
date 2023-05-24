@@ -24,9 +24,7 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
   private var sex: HKBiologicalSex?
   private var age: Int?
   private var bloodType: HKBloodType?
-  private var selectedRole: Role?
   private let bloodTypes = HKBloodType.allCases
-  private let roles = Role.allCases
   private let genders = Gender.allCases
   private var dateFormat: DateFormatter = {
     let format = DateFormatter()
@@ -57,14 +55,10 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
     selfView.emailTextField.inputPlaceholder = localizator.localizedString("registration.email")
     selfView.passwordTextField.title = localizator.localizedString("registration.password")
     selfView.passwordTextField.inputPlaceholder = localizator.localizedString("registration.password")
-    selfView.nickTextField.title = localizator.localizedString("registration.nick")
-    selfView.nickTextField.inputPlaceholder = localizator.localizedString("registration.nick")
     selfView.nameTextField.title = localizator.localizedString("registration.name")
     selfView.nameTextField.inputPlaceholder = localizator.localizedString("registration.name")
     selfView.surnameTextField.title = localizator.localizedString("registration.surname")
     selfView.surnameTextField.inputPlaceholder = localizator.localizedString("registration.surname")
-    selfView.birthdayTextField.title = localizator.localizedString("registration.birthday")
-    selfView.birthdayTextField.inputPlaceholder = localizator.localizedString("registration.birthday")
     selfView.pressureTextField.title = localizator.localizedString("registration.pressure")
     selfView.pressureTextField.inputPlaceholder = localizator.localizedString("registration.pressure")
     selfView.workHoursTextField.title = localizator.localizedString("registration.hours")
@@ -91,18 +85,12 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
     selfView.genderCollection.dataSource = self
     selfView.bloodTypeCollection.delegate = self
     selfView.bloodTypeCollection.dataSource = self
-    selfView.roleCollectionView.delegate = self
-    selfView.roleCollectionView.dataSource = self
-    selfView.roleLabel.isHidden = true
     selfView.bloodTypeCollection.register(LabelCollectionViewCell.self)
     selfView.genderCollection.register(LabelCollectionViewCell.self)
-    selfView.roleCollectionView.register(LabelCollectionViewCell.self)
-    [selfView.emailTextField, selfView.passwordTextField, selfView.nickTextField, selfView.nameTextField, selfView.surnameTextField, selfView.birthdayTextField, selfView.pressureTextField, selfView.workHoursTextField].forEach { $0.delegate = self }
-    selfView.datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+    [selfView.emailTextField, selfView.passwordTextField, selfView.nameTextField, selfView.surnameTextField, selfView.pressureTextField, selfView.workHoursTextField].forEach { $0.delegate = self }
     selfView.registerButton.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
     selfView.bloodTypeCollection.reloadData()
     selfView.genderCollection.reloadData()
-    selfView.roleCollectionView.reloadData()
     updateSexLabel()
     updateBloodTypeLabel()
   }
@@ -211,14 +199,6 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
     if !surnameIsValid {
       selfView.surnameTextField.hasError = true
     }
-    let nickIsValid = Validator.isValidString(selfView.nickTextField.text, ofType: .name)
-    if !nickIsValid {
-      selfView.nickTextField.hasError = true
-    }
-    let birthdayIsValid = !selfView.birthdayTextField.text.isNilOrEmpty
-    if !birthdayIsValid {
-      selfView.birthdayTextField.hasError = true
-    }
     let pressureIsValid = Validator.isValidString(selfView.pressureTextField.text, ofType: .pressure)
     if !pressureIsValid {
       selfView.pressureTextField.hasError = true
@@ -227,19 +207,16 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
     if !hoursIsValid {
       selfView.workHoursTextField.hasError = true
     }
-    return emailIsValid && passwordIsValid && nameIsValid && surnameIsValid && nickIsValid && birthdayIsValid && pressureIsValid && hoursIsValid
+    return emailIsValid && passwordIsValid && nameIsValid && surnameIsValid && pressureIsValid && hoursIsValid
   }
   
   private func updateContinueButton() {
     guard !selfView.emailTextField.text.isNilOrEmpty,
           !selfView.passwordTextField.text.isNilOrEmpty,
-          !selfView.nickTextField.text.isNilOrEmpty,
           !selfView.nameTextField.text.isNilOrEmpty,
           !selfView.surnameTextField.text.isNilOrEmpty,
-          !selfView.birthdayTextField.text.isNilOrEmpty,
           !selfView.pressureTextField.text.isNilOrEmpty,
           !selfView.workHoursTextField.text.isNilOrEmpty,
-          selectedRole != nil,
           Gender(sex: sex) != nil,
           bloodType != nil else {
       selfView.registerButton.isEnabled = false
@@ -253,19 +230,16 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
     guard isAllDataValid(),
           let email = selfView.emailTextField.text,
           let password = selfView.passwordTextField.text,
-          let nick = selfView.nickTextField.text,
           let name = selfView.nameTextField.text,
           let surname = selfView.surnameTextField.text,
-          let birthday = selfView.birthdayTextField.text,
           let pressure = Double(selfView.pressureTextField.text ?? ""),
           let hours = Int(selfView.workHoursTextField.text ?? ""),
-          let role = selectedRole,
           let gender = Gender(sex: sex),
           let bloodType = bloodType else {
       return
     }
     SVProgressHUD.show()
-    ProfileService.shared.register(email: email, password: password, nick: nick, role: role, fullName: name + " " + surname, birthday: birthday, gender: gender, bloodType: bloodType, averagePressure: pressure, workHoursCount: hours) { [weak self] result in
+    ProfileService.shared.register(email: email, password: password, fullName: name + " " + surname, gender: gender, bloodType: bloodType, averagePressure: pressure, workHoursCount: hours) { [weak self] result in
       DispatchQueue.main.async {
         guard let self = self else { return }
         SVProgressHUD.dismiss()
@@ -277,13 +251,6 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
         }
       }
     }
-  }
-  
-  @objc
-  private func datePickerValueChanged(_ sender: UIDatePicker) {
-    let selectedDate = sender.date
-    selfView.birthdayTextField.text = dateFormat.string(from: selectedDate)
-    updateContinueButton()
   }
   
   // MARK: - Keyboard
@@ -309,9 +276,7 @@ class RegisterViewController: LocalizableViewController, ErrorAlertDisplayable, 
 // MARK: - UICollectionViewDelegate
 extension RegisterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    if selfView.roleCollectionView == collectionView {
-      return Role.allCases.count
-    } else if selfView.genderCollection == collectionView {
+    if selfView.genderCollection == collectionView {
       return Gender.allCases.count
     } else if selfView.bloodTypeCollection == collectionView {
       return HKBloodType.allCases.count
@@ -322,9 +287,7 @@ extension RegisterViewController: UICollectionViewDelegate, UICollectionViewData
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: LabelCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-    if selfView.roleCollectionView == collectionView {
-      cell.configure(text: roles[indexPath.item].rawValue, isSelected: roles[indexPath.item] == selectedRole)
-    } else if selfView.genderCollection == collectionView {
+    if selfView.genderCollection == collectionView {
       cell.configure(text: genders[indexPath.item].title(), isSelected: genders[indexPath.item].isEqual(to: sex))
     } else if selfView.bloodTypeCollection == collectionView {
       cell.configure(text: bloodTypes[indexPath.item].title() ?? "", isSelected: bloodTypes[indexPath.item] == bloodType)
@@ -333,9 +296,7 @@ extension RegisterViewController: UICollectionViewDelegate, UICollectionViewData
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if selfView.roleCollectionView == collectionView {
-      selectedRole = roles[indexPath.item]
-    } else if selfView.genderCollection == collectionView {
+    if selfView.genderCollection == collectionView {
       switch genders[indexPath.item] {
       case .male:
         sex = .male
@@ -388,14 +349,6 @@ extension RegisterViewController: UITextFieldDelegate {
       if isNewStringValid {
         textField.setTextWithSavingCursorPosition(trimmedString)
         selfView.passwordTextField.hasError = false
-      }
-    } else if textField == selfView.nickTextField {
-      let trimmedString = newString.trimmingCharacters(in: .whitespacesAndNewlines)
-        .removingCharacters(from: Validator.allowedCharacterSet(for: .name).inverted)
-      isNewStringValid = Validator.maxSymbolsCount(for: .name) >= trimmedString.count
-      if isNewStringValid {
-        textField.setTextWithSavingCursorPosition(trimmedString)
-        selfView.nickTextField.hasError = false
       }
     } else if textField == selfView.pressureTextField {
       let trimmedString = newString.trimmingCharacters(in: .whitespacesAndNewlines)

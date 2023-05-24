@@ -12,6 +12,7 @@ def pods
  pod 'KeychainAccess'
  pod 'ESTabBarController-swift', '~> 2.6.4'
  pod 'FlagKit'
+ pod 'Charts', :git => 'https://github.com/AndreyKoshkinBrander/Charts.git', :branch => 'bar-chart-bottom-border'
 end
 
 target 'ITHealth' do
