@@ -27,4 +27,6 @@ enum Images {
   static let testHealth = #imageLiteral(resourceName: "testHealth")
   static let workHealth = #imageLiteral(resourceName: "work")
   static let back = #imageLiteral(resourceName: "back")
+  static let radioFilled = #imageLiteral(resourceName: "radioFilled")
+  static let radioEmpty = #imageLiteral(resourceName: "radioEmpty")
 }

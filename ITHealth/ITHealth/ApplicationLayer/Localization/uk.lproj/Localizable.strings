@@ -73,3 +73,9 @@
 "company_code.textfield.title" = "Введіть код компанії";
 "company_code.textfield.placeholder" = "Код компанії";
 "company_code.button" = "Продовжити";
+
+"test.next.button" = "Продовжити";
+"test.number" = "Номер питання:";
+"test.result.title" = "Вітаю! Ви завершили тест!";
+"test.result.subtitle" = "Ваш результат:";
+"OK" = "OK";

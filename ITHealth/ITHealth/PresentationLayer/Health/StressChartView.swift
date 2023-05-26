@@ -28,8 +28,8 @@ class StressChartView: InitView {
   }
   
   func configure(startDate: Date, endDate: Date, stressBound: Double, points: [Double]) {
-    let startDateString = DateFormatsFactory.getNetWealthChartDateFormat().string(from: startDate)
-    let endDateString = DateFormatsFactory.getNetWealthChartDateFormat().string(from: endDate)
+    let startDateString = DateFormatsFactory.getStressChartDateFormat().string(from: startDate)
+    let endDateString = DateFormatsFactory.getStressChartDateFormat().string(from: endDate)
     centerBoundaryView.configure(position: .top, color: UIConstants.boundaryRedColor)
     centerBoundaryView.configure(leftTitle: Localizator.standard.localizedString("stress.chart.stress_bound"), rightTitle: StringComposer.shared.getStressString(from: stressBound))
     topBoundaryView.configure(position: .bottom, color: UIConstants.boundaryBlueColor)

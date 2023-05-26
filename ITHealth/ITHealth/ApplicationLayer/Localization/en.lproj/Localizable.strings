@@ -73,3 +73,9 @@
 "company_code.textfield.title" = "Enter your company code";
 "company_code.textfield.placeholder" = "Company code";
 "company_code.button" = "Continue";
+
+"test.next.button" = "Continue";
+"test.number" = "Question number:";
+"test.result.title" = "Congratulations! The test is finished!";
+"test.result.subtitle" = "Your result:";
+"OK" = "OK";
