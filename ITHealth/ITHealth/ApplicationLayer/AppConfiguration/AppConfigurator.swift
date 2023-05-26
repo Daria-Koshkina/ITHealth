@@ -29,6 +29,7 @@ class AppConfigurator {
     configureHUD()
     configureAppCoordinator(appDelegate: appDelegate)
     configureAppWindow(appDelegate: appDelegate)
+      ProfileService.shared.sendHealthData()
   }
   
   private func configureLokalise() {

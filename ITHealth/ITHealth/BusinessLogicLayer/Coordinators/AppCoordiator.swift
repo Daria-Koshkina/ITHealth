@@ -32,10 +32,21 @@ class AppCoordinator: Coordinator {
   }
   
   private func showMain(completion: (() -> Void)? = nil) {
+    guard let user = ProfileService.shared.user,
+          user.connectedToCompany else {
+      showAddToCompany()
+      return
+    }
     let mainTabBarCoordinator = MainTabBarCoordinator(navigationController: navigationController)
     mainTabBarCoordinator.output = self
     self.mainTabBarCoordinator = mainTabBarCoordinator
     mainTabBarCoordinator.start(completion: completion)
+  }
+  
+  private func showAddToCompany() {
+    let vc = CodeViewController()
+    vc.output = self
+    navigationController.pushViewController(vc, animated: true)
   }
 }
 
@@ -51,5 +62,12 @@ extension AppCoordinator: MainTabBarCoordinatorOutput {
     mainTabBarCoordinator?.clearControllers {
       self.showAuth()
     }
+  }
+}
+
+extension AppCoordinator: CodeViewControllerOutput {
+  func codeWasEntered(from: CodeViewController) {
+    navigationController.viewControllers.removeAll(where: { $0.isKind(of: CodeViewController.self) })
+    showMain()
   }
 }

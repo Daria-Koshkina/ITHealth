@@ -21,6 +21,36 @@ class AuthAPI: NetworkAPI {
     static let register = "/account/signup"
     static let profile = "/account/profile"
     static let update = "/account/update"
+    static let health = "/Health/Create"
+    static let company = "/Company/AcceptUserToCompany"
+  }
+  
+  func addToCompany(code: String,
+                    completion: @escaping (_ response: Result<User, Error>) -> Void) {
+    if !ReachabilityService.shared.isInternetAvailable {
+      completion(.failure(ServerError.noInternetConnection))
+      return
+    }
+    
+    let url = Endpoint.company + "?inviteCode=" + code
+    alamofireRequest(endpoint: url,
+                     method: .post,
+                     parameters: [:]) { [weak self] dataResponse in
+      guard let self = self else { return }
+      let parsedResult = self.parseResponse(dataResponse)
+      switch parsedResult {
+      case .failure(let error):
+        completion(.failure(error))
+      case .success(let json):
+        let data = json[NetworkResponseKey.data]
+        if let user = User(json: data) {
+          completion(.success(user))
+        } else {
+          completion(.failure(ServerError.unknown))
+          return
+        }
+      }
+    }
   }
   
   func auth(email: String,
@@ -181,6 +211,30 @@ class AuthAPI: NetworkAPI {
           completion(.failure(ServerError.unknown))
           return
         }
+      }
+    }
+  }
+  
+  func sendHealthData(data: (Double, Double, Double, Double), completion: @escaping (_ response: Result<Any?, Error>) -> Void) {
+    if !ReachabilityService.shared.isInternetAvailable {
+      completion(.failure(ServerError.noInternetConnection))
+      return
+    }
+    
+    let params: [String: Any] = ["weight": data.0,
+                                 "pulse": data.1,
+                                 "pressure": data.2,
+                                 "sleepTime": data.3]
+    alamofireRequest(endpoint: Endpoint.health,
+                     method: .post,
+                     parameters: params) { [weak self] dataResponse in
+      guard let self = self else { return }
+      let parsedResult = self.parseResponse(dataResponse)
+      switch parsedResult {
+      case .failure(let error):
+        completion(.failure(error))
+      case .success:
+        completion(.success(nil))
       }
     }
   }

@@ -41,6 +41,7 @@ class AuthViewController: LocalizableViewController, ErrorAlertDisplayable {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     (navigationController as? MainNavigationController)?.setupSelfConfiguration()
+    healthAuthIfNeeded()
   }
   
   override func localize() {
@@ -55,6 +56,21 @@ class AuthViewController: LocalizableViewController, ErrorAlertDisplayable {
     selfView.registerButton.setTitle(localizator.localizedString("auth.register_button.title"), for: .normal)
   }
   
+  private func healthAuthIfNeeded() {
+    HealthService.shared.authorizeHealthKit { (authorized, error) in
+      guard authorized else {
+        let baseMessage = "HealthKit Authorization Failed"
+        if let error = error {
+          print("\(baseMessage). Reason: \(error.localizedDescription)")
+        } else {
+          print(baseMessage)
+        }
+        return
+      }
+      print("HealthKit Successfully Authorized.")
+    }
+  }
+  
   private func addObservers() {
     NotificationCenter.default.addObserver(
       self,
@@ -67,24 +83,6 @@ class AuthViewController: LocalizableViewController, ErrorAlertDisplayable {
       selector: #selector(keyboardWillHide(notification:)),
       name: UIResponder.keyboardWillHideNotification,
       object: nil)
-  }
-  
-  private func healthAuthIfNeeded() {
-    HealthService.shared.authorizeHealthKit { (authorized, error) in
-      guard authorized else {
-        
-        let baseMessage = "HealthKit Authorization Failed"
-        
-        if let error = error {
-          print("\(baseMessage). Reason: \(error.localizedDescription)")
-        } else {
-          print(baseMessage)
-        }
-        
-        return
-      }
-      print("HealthKit Successfully Authorized.")
-    }
   }
   
   private func setup() {

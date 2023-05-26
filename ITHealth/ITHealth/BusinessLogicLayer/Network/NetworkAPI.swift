@@ -26,7 +26,7 @@ class NetworkAPI: NSObject {
     } else {
       headers[NetworkRequestKey.authorization] = nil
     }
-    headers["Accept-Language"] = LocalizationService.shared.language.code
+    headers["Accept-Language"] = LocalizationService.shared.language.code.replacingOccurrences(of: "_", with: "-")
     debugPrint(" ☄️ REQUEST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     debugPrint(" ☄️ >>> Path >>>:", requestURL)
     debugPrint(" ☄️ >>> Headers >>>:", headers)

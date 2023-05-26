@@ -10,7 +10,6 @@ import UIKit
 import SVProgressHUD
 
 protocol CodeViewControllerOutput: AnyObject {
-  func back(from: CodeViewController)
   func codeWasEntered(from: CodeViewController)
 }
 
@@ -24,10 +23,14 @@ class CodeViewController: LocalizableViewController, ErrorAlertDisplayable, Navi
     view = selfView
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationItem.hidesBackButton = true
+  }
+  
   override func initConfigure() {
     super.initConfigure()
     localize()
-    configureNavBar()
     selfView.passwordTextField.inputViewDelegate = self
     selfView.button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     updateContinueButton()
@@ -41,25 +44,15 @@ class CodeViewController: LocalizableViewController, ErrorAlertDisplayable, Navi
     selfView.button.setTitle(localizator.localizedString("company_code.button"), for: .normal)
   }
   
-  private func configureNavBar() {
-    setNavigationButton(#selector(didTapBack), button: ButtonsFactory.getNavigationBarBackButton(), side: .left)
-  }
-  
   private func updateContinueButton() {
     selfView.button.isEnabled = !selfView.passwordTextField.text.isNilOrEmpty
   }
   
   @objc
   private func didTapButton() {
-    let passwordIsValid = Validator.isValidString(selfView.passwordTextField.text, ofType: .password)
-    if !passwordIsValid {
-      selfView.passwordTextField.hasError = true
-      updateContinueButton()
-    }
-    guard let password = selfView.passwordTextField.text,
-          passwordIsValid else { return }
+    guard let password = selfView.passwordTextField.text else { return }
     SVProgressHUD.show()
-    ProfileService.shared.changePassword(password: password) { [weak self] result in
+    ProfileService.shared.addToCompany(code: password) { [weak self] result in
       DispatchQueue.main.async {
         guard let self = self else { return }
         SVProgressHUD.dismiss()
@@ -71,11 +64,6 @@ class CodeViewController: LocalizableViewController, ErrorAlertDisplayable, Navi
         }
       }
     }
-  }
-  
-  @objc
-  private func didTapBack() {
-    output?.back(from: self)
   }
 }
 

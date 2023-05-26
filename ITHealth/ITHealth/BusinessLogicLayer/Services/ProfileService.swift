@@ -73,8 +73,32 @@ class ProfileService {
       case .success(let token):
         self.token = token
         self.getUser(completion: completion)
+        self.sendHealthData()
       case .failure(let error):
         completion(.failure(error))
+      }
+    }
+  }
+  
+  func sendHealthData() {
+    HealthService.shared.getUserData(completion: { (data, _) in
+      guard let data = data else {
+        AuthAPI.shared.sendHealthData(data: (60, 70, 120, 8), completion: { _ in })
+        return
+      }
+      AuthAPI.shared.sendHealthData(data: data, completion: { _ in })
+    })
+  }
+  
+  func addToCompany(code: String,
+                    completion: @escaping (_ response: Result<User, Error>) -> Void) {
+    AuthAPI.shared.addToCompany(code: code) { result in
+      switch result {
+      case .failure(let error):
+        completion(.failure(error))
+      case .success(let user):
+        self.user = user
+        completion(.success(user))
       }
     }
   }
