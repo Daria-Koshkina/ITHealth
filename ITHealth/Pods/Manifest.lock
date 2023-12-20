@@ -4,7 +4,7 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
-  - ESTabBarController-swift (2.6.5)
+  - ESTabBarController-swift (2.8.0)
   - FlagKit (2.2)
   - KeychainAccess (4.2.2)
   - Lokalise (0.10.2)
@@ -18,7 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Charts (from `https://github.com/AndreyKoshkinBrander/Charts.git`, branch `bar-chart-bottom-border`)
-  - ESTabBarController-swift (~> 2.6.4)
+  - ESTabBarController-swift
   - FlagKit
   - KeychainAccess
   - Lokalise
@@ -55,7 +55,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Charts: 354f86803d11d9c35de280587fef50d1af063978
-  ESTabBarController-swift: f31cd3e30bde23619d3b300266f27864d96ffb58
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   FlagKit: eca7dc89064b0c986302ba9acefad1bf80a435b1
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Lokalise: 252c397887dfd9983331abffa90ab60cdb004e19
@@ -66,6 +66,6 @@ SPEC CHECKSUMS:
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 6dfacc1fc8eb03bdc53d600a594eec774239b578
+PODFILE CHECKSUM: 5c90c72e151ff1cc2218ff7b7e1faea781236506
 
 COCOAPODS: 1.11.3

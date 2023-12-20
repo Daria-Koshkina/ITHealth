@@ -27,4 +27,6 @@ enum Constants {
   }
   
   static var baseURLWithoutAPI: String { return "https://ithealthwebapi.azurewebsites.net" }
+  
+  static let stressBound = 1.12
 }

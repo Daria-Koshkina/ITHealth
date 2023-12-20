@@ -12,6 +12,14 @@
 		2F02583829A2B31D0098190B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02583729A2B31D0098190B /* Result.swift */; };
 		2F02583C29A2B4C50098190B /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02583B29A2B4C50098190B /* AuthAPI.swift */; };
 		2F02583E29A2B53B0098190B /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02583D29A2B53B0098190B /* ReachabilityService.swift */; };
+		2F3E34962A254743000C9A0B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E34952A254743000C9A0B /* Task.swift */; };
+		2F3E34982A2549A6000C9A0B /* WorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E34972A2549A6000C9A0B /* WorkService.swift */; };
+		2F3E349A2A254A1E000C9A0B /* WorkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E34992A254A1E000C9A0B /* WorkAPI.swift */; };
+		2F3E349D2A254CFE000C9A0B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E349C2A254CFE000C9A0B /* TasksViewController.swift */; };
+		2F3E349F2A254DA7000C9A0B /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E349E2A254DA7000C9A0B /* TaskTableViewCell.swift */; };
+		2F3E34A22A25CB6F000C9A0B /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E34A12A25CB6F000C9A0B /* WorkViewController.swift */; };
+		2F3E34A42A25CC5B000C9A0B /* WorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E34A32A25CC5B000C9A0B /* WorkView.swift */; };
+		2F3E34AD2A265E08000C9A0B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E34AC2A265E08000C9A0B /* WebViewController.swift */; };
 		2F423FC729FC076A00203E59 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FC629FC076A00203E59 /* HealthService.swift */; };
 		2F423FCA29FC75B100203E59 /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FC929FC75B100203E59 /* LabelCollectionViewCell.swift */; };
 		2F423FCC29FC75E000203E59 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F423FCB29FC75E000203E59 /* BaseCollectionViewCell.swift */; };
@@ -65,6 +73,7 @@
 		2F79874E2A20691E009D3E5C /* OpenAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F79874D2A20691E009D3E5C /* OpenAnswerView.swift */; };
 		2F7987502A206A50009D3E5C /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F79874F2A206A50009D3E5C /* CustomTextView.swift */; };
 		2F7987522A207D56009D3E5C /* TestsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7987512A207D56009D3E5C /* TestsAPI.swift */; };
+		2F7987542A21080D009D3E5C /* HealthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7987532A21080D009D3E5C /* HealthAPI.swift */; };
 		2F892F82299D7ABE00EDC260 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F81299D7ABE00EDC260 /* Validator.swift */; };
 		2F892F84299D7B2300EDC260 /* RegexValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F83299D7B2300EDC260 /* RegexValidator.swift */; };
 		2F892F86299D7B6600EDC260 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F85299D7B6600EDC260 /* String+Extension.swift */; };
@@ -75,6 +84,7 @@
 		2F892F90299D8A6400EDC260 /* UserMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F8F299D8A6400EDC260 /* UserMO.swift */; };
 		2F892F92299D8A9900EDC260 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F892F91299D8A9900EDC260 /* User.swift */; };
 		2FCC99EC2A1570E800D4511E /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC99EB2A1570E800D4511E /* CodeViewController.swift */; };
+		2FD8D7262A23A99100E0600A /* BurnoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8D7252A23A99100E0600A /* BurnoutInfo.swift */; };
 		2FEB1BFF299954B4006C3238 /* ITHealth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB1BFD299954B4006C3238 /* ITHealth.xcdatamodeld */; };
 		2FEB1C03299954B7006C3238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FEB1C02299954B7006C3238 /* Assets.xcassets */; };
 		2FEB1C15299959AF006C3238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB1C14299959AF006C3238 /* AppDelegate.swift */; };
@@ -122,6 +132,14 @@
 		2F02583729A2B31D0098190B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2F02583B29A2B4C50098190B /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		2F02583D29A2B53B0098190B /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		2F3E34952A254743000C9A0B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2F3E34972A2549A6000C9A0B /* WorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkService.swift; sourceTree = "<group>"; };
+		2F3E34992A254A1E000C9A0B /* WorkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkAPI.swift; sourceTree = "<group>"; };
+		2F3E349C2A254CFE000C9A0B /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		2F3E349E2A254DA7000C9A0B /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		2F3E34A12A25CB6F000C9A0B /* WorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
+		2F3E34A32A25CC5B000C9A0B /* WorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkView.swift; sourceTree = "<group>"; };
+		2F3E34AC2A265E08000C9A0B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2F423FC629FC076A00203E59 /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
 		2F423FC929FC75B100203E59 /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F423FCB29FC75E000203E59 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +193,7 @@
 		2F79874D2A20691E009D3E5C /* OpenAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAnswerView.swift; sourceTree = "<group>"; };
 		2F79874F2A206A50009D3E5C /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		2F7987512A207D56009D3E5C /* TestsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsAPI.swift; sourceTree = "<group>"; };
+		2F7987532A21080D009D3E5C /* HealthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAPI.swift; sourceTree = "<group>"; };
 		2F892F81299D7ABE00EDC260 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		2F892F83299D7B2300EDC260 /* RegexValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexValidator.swift; sourceTree = "<group>"; };
 		2F892F85299D7B6600EDC260 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -185,6 +204,7 @@
 		2F892F8F299D8A6400EDC260 /* UserMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMO.swift; sourceTree = "<group>"; };
 		2F892F91299D8A9900EDC260 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2FCC99EB2A1570E800D4511E /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		2FD8D7252A23A99100E0600A /* BurnoutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurnoutInfo.swift; sourceTree = "<group>"; };
 		2FEB1BF6299954B4006C3238 /* ITHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FEB1BFE299954B4006C3238 /* ITHealth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITHealth.xcdatamodel; sourceTree = "<group>"; };
 		2FEB1C02299954B7006C3238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +266,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F3E349B2A254CED000C9A0B /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				2F3E349C2A254CFE000C9A0B /* TasksViewController.swift */,
+				2F3E349E2A254DA7000C9A0B /* TaskTableViewCell.swift */,
+				2F3E34AC2A265E08000C9A0B /* WebViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		2F3E34A02A25CAB7000C9A0B /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				2F3E34A12A25CB6F000C9A0B /* WorkViewController.swift */,
+				2F3E34A32A25CC5B000C9A0B /* WorkView.swift */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
 		2F423FC829FC747A00203E59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +485,8 @@
 		2FEB1C0F2999567E006C3238 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2F3E34A02A25CAB7000C9A0B /* Work */,
+				2F3E349B2A254CED000C9A0B /* Tasks */,
 				2F7987452A1F2FEE009D3E5C /* Test */,
 				2F79873F2A1E8F27009D3E5C /* TestList */,
 				2FCC99EA2A1570BC00D4511E /* CodeCompany */,
@@ -562,6 +603,8 @@
 				2F7987372A1E8726009D3E5C /* Question.swift */,
 				2F79873B2A1E895E009D3E5C /* Answer.swift */,
 				2F79873D2A1E8CEC009D3E5C /* TestResult.swift */,
+				2FD8D7252A23A99100E0600A /* BurnoutInfo.swift */,
+				2F3E34952A254743000C9A0B /* Task.swift */,
 			);
 			path = PlainObjects;
 			sourceTree = "<group>";
@@ -575,6 +618,7 @@
 				2F02583D29A2B53B0098190B /* ReachabilityService.swift */,
 				2F423FC629FC076A00203E59 /* HealthService.swift */,
 				2F7987392A1E88DE009D3E5C /* TestsService.swift */,
+				2F3E34972A2549A6000C9A0B /* WorkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -679,6 +723,8 @@
 				2F02583729A2B31D0098190B /* Result.swift */,
 				2F02583B29A2B4C50098190B /* AuthAPI.swift */,
 				2F7987512A207D56009D3E5C /* TestsAPI.swift */,
+				2F7987532A21080D009D3E5C /* HealthAPI.swift */,
+				2F3E34992A254A1E000C9A0B /* WorkAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -819,6 +865,8 @@
 			files = (
 				2FCC99EC2A1570E800D4511E /* CodeViewController.swift in Sources */,
 				2F7862C029AAAFD700463DD0 /* NavigationButtoned.swift in Sources */,
+				2F3E349F2A254DA7000C9A0B /* TaskTableViewCell.swift in Sources */,
+				2F7987542A21080D009D3E5C /* HealthAPI.swift in Sources */,
 				2F423FEB29FF050400203E59 /* ProfileItemView.swift in Sources */,
 				2F78E9FE2A0E187700A55A3D /* StringComposer.swift in Sources */,
 				2F79873A2A1E88DE009D3E5C /* TestsService.swift in Sources */,
@@ -829,6 +877,7 @@
 				2F423FD529FD8D2D00203E59 /* MainTabBarController.swift in Sources */,
 				2F423FCC29FC75E000203E59 /* BaseCollectionViewCell.swift in Sources */,
 				2FEB1C2829995DE2006C3238 /* MainNavigationController.swift in Sources */,
+				2F3E349A2A254A1E000C9A0B /* WorkAPI.swift in Sources */,
 				2FEBBA4B29998DBD0021FE87 /* ErrorAlertDisplayable.swift in Sources */,
 				2FEBBA5629998E820021FE87 /* BaseAlertView.swift in Sources */,
 				2FEBBA5429998E690021FE87 /* AlertView.swift in Sources */,
@@ -844,6 +893,7 @@
 				2FEBBA5229998E570021FE87 /* AlertViewController.swift in Sources */,
 				2F02583429A2AFBA0098190B /* Notification+Extension.swift in Sources */,
 				2F7987492A1F3100009D3E5C /* TestView.swift in Sources */,
+				2F3E34982A2549A6000C9A0B /* WorkService.swift in Sources */,
 				2F423FF929FFCF8A00203E59 /* Date+Extension.swift in Sources */,
 				2F423FD729FD8D5800203E59 /* ColoredTabBarController.swift in Sources */,
 				2F423FFE29FFE17700203E59 /* ChangePasswordView.swift in Sources */,
@@ -851,6 +901,7 @@
 				2F892F8A299D87AB00EDC260 /* UIViewController+Extension.swift in Sources */,
 				2FEBBA642999903C0021FE87 /* UIColor+Extension.swift in Sources */,
 				2FEBBA6B299994290021FE87 /* NetworkKeys.swift in Sources */,
+				2F3E349D2A254CFE000C9A0B /* TasksViewController.swift in Sources */,
 				2F78E9FA2A0E16C800A55A3D /* DashedView.swift in Sources */,
 				2F7987382A1E8726009D3E5C /* Question.swift in Sources */,
 				2F423FF429FF199200203E59 /* BaseTableViewCell.swift in Sources */,
@@ -871,10 +922,12 @@
 				2FEB1C3629995EC0006C3238 /* AppLanguage.swift in Sources */,
 				2FEB1C2929995DE2006C3238 /* SwipableNavigationController.swift in Sources */,
 				2FEBBA6F299996D90021FE87 /* AuthView.swift in Sources */,
+				2F3E34AD2A265E08000C9A0B /* WebViewController.swift in Sources */,
 				2F7987412A1E8F3E009D3E5C /* TestListViewController.swift in Sources */,
 				2F7987342A1E852C009D3E5C /* Test.swift in Sources */,
 				2FEB1C2729995DE2006C3238 /* BaseNavigationViewController.swift in Sources */,
 				2F892F86299D7B6600EDC260 /* String+Extension.swift in Sources */,
+				2F3E34A22A25CB6F000C9A0B /* WorkViewController.swift in Sources */,
 				2F423FC729FC076A00203E59 /* HealthService.swift in Sources */,
 				2F892F8C299D88F700EDC260 /* Constants.swift in Sources */,
 				2F79873E2A1E8CEC009D3E5C /* TestResult.swift in Sources */,
@@ -898,10 +951,12 @@
 				2F892F82299D7ABE00EDC260 /* Validator.swift in Sources */,
 				2F02583829A2B31D0098190B /* Result.swift in Sources */,
 				2F7862BE29AAAF7C00463DD0 /* RegisterView.swift in Sources */,
+				2F3E34A42A25CC5B000C9A0B /* WorkView.swift in Sources */,
 				2FEB1C3329995E9A006C3238 /* LocalizationService.swift in Sources */,
 				2FEBBA5D29998FA70021FE87 /* OutlinedButton.swift in Sources */,
 				2F79874E2A20691E009D3E5C /* OpenAnswerView.swift in Sources */,
 				2F423FDB29FD97D800203E59 /* TestsCoordinator.swift in Sources */,
+				2F3E34962A254743000C9A0B /* Task.swift in Sources */,
 				2F79874C2A1F35B1009D3E5C /* AnswerView.swift in Sources */,
 				2FEB1C17299959E4006C3238 /* AppConfigurator.swift in Sources */,
 				2FEB1C1C29995CCD006C3238 /* AppCoordiator.swift in Sources */,
@@ -913,6 +968,7 @@
 				2FEBBA73299997D60021FE87 /* Optional+Extension.swift in Sources */,
 				2F423FDD29FD983300203E59 /* TasksCoordinator.swift in Sources */,
 				2F892F88299D7B8700EDC260 /* UITextField+Extension.swift in Sources */,
+				2FD8D7262A23A99100E0600A /* BurnoutInfo.swift in Sources */,
 				2F423FCE29FC7ABD00203E59 /* UICollectionView+Extension.swift in Sources */,
 				2FEBBA5929998EEF0021FE87 /* UIStackView+Extension.swift in Sources */,
 				2F78EA002A0E19B100A55A3D /* ViewsFactory.swift in Sources */,
@@ -1065,9 +1121,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ITHealth/ApplicationLayer/ProjectSettings/ITHealth.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7MSPFU2KV4;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7MSPFU2KV4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -1092,6 +1149,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.koshkina.nure.ITHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ITHealthDev;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

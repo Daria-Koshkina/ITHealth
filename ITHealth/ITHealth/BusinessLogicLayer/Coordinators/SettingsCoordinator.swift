@@ -48,7 +48,9 @@ extension SettingsCoordinator: SettingsViewControllerOutput {
   }
   
   func showWork(from viewController: SettingsViewController) {
-    
+    let vc = WorkViewController()
+    vc.output = self
+    navigationController.pushViewController(vc, animated: true)
   }
   
   func showLanguage(from viewController: SettingsViewController) {
@@ -78,6 +80,12 @@ extension SettingsCoordinator: ChangePasswordViewControllerOutput {
 
 extension SettingsCoordinator: HealthViewControllerOutput {
   func back(from: HealthViewController) {
+    navigationController.popViewController(animated: true)
+  }
+}
+
+extension SettingsCoordinator: WorkViewControllerOutput {
+  func back(from: WorkViewController) {
     navigationController.popViewController(animated: true)
   }
 }

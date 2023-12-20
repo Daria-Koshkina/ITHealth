@@ -62,6 +62,8 @@
 "health.stress" = "Stress";
 "health.test" = "Tests";
 "health.work" = "Work";
+"health.sleep" = "Sleep";
+"health.burnout" = "Your general state: ";
 "health.navbar" = "Health";
 "stress.chart.stress_bound" = "Stress bound";
 "stress.chart.top" = "Your max stress level";
@@ -79,3 +81,8 @@
 "test.result.title" = "Congratulations! The test is finished!";
 "test.result.subtitle" = "Your result:";
 "OK" = "OK";
+
+"work.navbar" = "Work";
+"work.hours.title" = "Your worked hours on this week";
+"work.hours.norma" = "Your hours rate";
+"work.hours.max" = "Your max hours count";

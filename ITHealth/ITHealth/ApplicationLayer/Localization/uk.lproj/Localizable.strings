@@ -63,6 +63,8 @@
 "health.test" = "Тести";
 "health.work" = "Робота";
 "health.navbar" = "Здоровʼя";
+"health.sleep" = "Сон";
+"health.burnout" = "Ваш загальний стан: ";
 "stress.chart.stress_bound" = "Границя стресу";
 "stress.chart.top" = "Максимальний рівень стресу";
 "health.stress.title" = "Ваша статистика стресу";
@@ -79,3 +81,8 @@
 "test.result.title" = "Вітаю! Ви завершили тест!";
 "test.result.subtitle" = "Ваш результат:";
 "OK" = "OK";
+
+"work.navbar" = "Робота";
+"work.hours.title" = "Ваші відпрацьовані години на цьому тижні";
+"work.hours.norma" = "Ваша норма годин";
+"work.hours.max" = "Ваша максимальна кількість годин";

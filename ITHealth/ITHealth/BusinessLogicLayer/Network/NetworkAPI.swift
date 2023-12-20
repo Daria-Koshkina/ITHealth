@@ -16,7 +16,6 @@ class NetworkAPI: NSObject {
                         method: HTTPMethod,
                         parameters: [String: Any],
                         headers: HTTPHeaders = HTTPHeaders([]),
-                        isRefresh: Bool = false,
                         completion: @escaping (AFDataResponse<Any>) -> Void) {
     let encodingType: ParameterEncoding = (method == .get) ? URLEncoding.default : JSONEncoding.default
     let requestURL = Constants.baseURL + endpoint

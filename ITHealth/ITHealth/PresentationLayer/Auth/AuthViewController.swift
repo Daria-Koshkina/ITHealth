@@ -154,10 +154,11 @@ extension AuthViewController: InputViewDelegate {
   }
   
   func rightLabelWasTapped(in textField: UITextField) {
-    if textField == selfView.passwordTextField {
-      
+    if textField == selfView.passwordTextField,
+    let url = URL(string: "https://ithealth.azurewebsites.net/reset") {
+      UIApplication.shared.openURL(url)
     }
-  }
+  } 
 }
 
 // MARK: - UITextFieldDelegate

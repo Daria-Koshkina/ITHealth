@@ -13,7 +13,7 @@ struct Question {
   let number: Int
   let description: String
   let answers: [Answer]
-  let openQuestions: [OpenQuestion]
+  var openQuestions: [OpenQuestion]
   
   init(id: Int, number: Int, description: String, answers: [Answer], openQuestions: [OpenQuestion]) {
     self.id = id
@@ -32,6 +32,9 @@ struct Question {
     self.description = description
     self.answers = (json["answers"].arrayValue).compactMap { Answer(json: $0) }
     self.openQuestions = (json["subquestions"].arrayValue).compactMap { OpenQuestion(json: $0) }
+    if !answers.isEmpty {
+      openQuestions.removeAll()
+    }
   }
 }
 

@@ -27,13 +27,13 @@ class StressChartView: InitView {
     configureLineChartView()
   }
   
-  func configure(startDate: Date, endDate: Date, stressBound: Double, points: [Double]) {
+  func configure(startDate: Date, endDate: Date, stressBound: Double, title: String, maxTitle: String, points: [Double]) {
     let startDateString = DateFormatsFactory.getStressChartDateFormat().string(from: startDate)
     let endDateString = DateFormatsFactory.getStressChartDateFormat().string(from: endDate)
     centerBoundaryView.configure(position: .top, color: UIConstants.boundaryRedColor)
-    centerBoundaryView.configure(leftTitle: Localizator.standard.localizedString("stress.chart.stress_bound"), rightTitle: StringComposer.shared.getStressString(from: stressBound))
+    centerBoundaryView.configure(leftTitle: title, rightTitle: StringComposer.shared.getStressString(from: stressBound))
     topBoundaryView.configure(position: .bottom, color: UIConstants.boundaryBlueColor)
-    topBoundaryView.configure(leftTitle: Localizator.standard.localizedString("stress.chart.top"), rightTitle: StringComposer.shared.getStressString(from: points.max() ?? .zero))
+    topBoundaryView.configure(leftTitle: maxTitle, rightTitle: StringComposer.shared.getStressString(from: points.max() ?? .zero))
     bottomBoundaryView.configure(position: .top, color: UIConstants.boundaryBlueColor)
     bottomBoundaryView.configure(leftTitle: startDateString, rightTitle: endDateString)
     lineChartView.xAxis.axisMaximum = 7

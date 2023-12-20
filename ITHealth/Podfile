@@ -10,7 +10,7 @@ def pods
  pod 'SVProgressHUD'
  pod 'ReachabilitySwift'
  pod 'KeychainAccess'
- pod 'ESTabBarController-swift', '~> 2.6.4'
+ pod 'ESTabBarController-swift'
  pod 'FlagKit'
  pod 'Charts', :git => 'https://github.com/AndreyKoshkinBrander/Charts.git', :branch => 'bar-chart-bottom-border'
 end

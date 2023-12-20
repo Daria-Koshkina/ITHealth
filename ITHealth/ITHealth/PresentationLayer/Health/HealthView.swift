@@ -9,6 +9,7 @@ import UIKit
 
 class HealthView: InitView {
   
+  let burnoutLabel = UILabel()
   private let stackView = UIStackView()
   private let stackView2 = UIStackView()
   private let stackView3 = UIStackView()
@@ -16,6 +17,7 @@ class HealthView: InitView {
   let stressItem = HealthItemView()
   let testItem = HealthItemView()
   let workItem = HealthItemView()
+  let sleepItem = HealthItemView()
   let titleLabel = UILabel()
   let chartView = StressChartView()
   let prevButton = PrimaryButton()
@@ -23,11 +25,26 @@ class HealthView: InitView {
   
   override func initConfigure() {
     super.initConfigure()
+    configureBurnoutLabel()
     configureStackView()
     configureStackView2()
     configureTitleLabel()
     configureChartView()
     configureStackView3()
+  }
+  
+  private func configureBurnoutLabel() {
+    addSubview(burnoutLabel)
+    burnoutLabel.font = Fonts.semibold16
+    burnoutLabel.textColor = UIColor.darkGray
+    burnoutLabel.textAlignment = .center
+    burnoutLabel.numberOfLines = .zero
+    burnoutLabel.snp.makeConstraints { make in
+      make.left.right.equalToSuperview()
+        .inset(16)
+      make.top.equalTo(safeAreaLayoutGuide)
+        .offset(20)
+    }
   }
   
   private func configureStackView() {
@@ -37,8 +54,8 @@ class HealthView: InitView {
     stackView.snp.makeConstraints { make in
       make.left.right.equalToSuperview()
         .inset(16)
-      make.top.equalTo(safeAreaLayoutGuide)
-        .offset(20)
+      make.top.equalTo(burnoutLabel.snp.bottom)
+        .offset(30)
       make.height.equalTo(44)
     }
     stackView.addArrangedSubview(effeciencyItem)
@@ -58,6 +75,7 @@ class HealthView: InitView {
     }
     stackView2.addArrangedSubview(testItem)
     stackView2.addArrangedSubview(workItem)
+    stackView2.addArrangedSubview(sleepItem)
   }
   
   private func configureTitleLabel() {

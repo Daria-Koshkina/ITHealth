@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SVProgressHUD
 
 protocol HealthViewControllerOutput: AnyObject {
   func back(from: HealthViewController)
@@ -37,9 +38,11 @@ class HealthViewController: LocalizableViewController, ErrorAlertDisplayable, Na
     selfView.stressItem.configure(title: localizator.localizedString("health.stress"), image: Images.stress)
     selfView.testItem.configure(title: localizator.localizedString("health.test"), image: Images.testHealth)
     selfView.workItem.configure(title: localizator.localizedString("health.work"), image: Images.workHealth)
+    selfView.sleepItem.configure(title: localizator.localizedString("health.sleep"), image: Images.workHealth)
     selfView.titleLabel.text = localizator.localizedString("health.stress.title")
     selfView.prevButton.setTitle(localizator.localizedString("health.stress.prev"), for: .normal)
     selfView.nextButton.setTitle(localizator.localizedString("health.stress.next"), for: .normal)
+    loadBurnoutInfo()
   }
   
   private func configureNavBar() {
@@ -47,17 +50,55 @@ class HealthViewController: LocalizableViewController, ErrorAlertDisplayable, Na
   }
   
   private func setup() {
-    selfView.workItem.isError = true
-    selfView.testItem.isError = true
     selfView.prevButton.addTarget(self, action: #selector(didTapPrev), for: .touchUpInside)
     selfView.nextButton.addTarget(self, action: #selector(didTapNext), for: .touchUpInside)
+  }
+  
+  private func loadBurnoutInfo() {
+    SVProgressHUD.show()
+    HealthService.shared.getBurnoutResult { [weak self] result in
+      DispatchQueue.main.async {
+        guard let self = self else { return }
+        SVProgressHUD.dismiss()
+        switch result {
+        case .failure(let error):
+          self.handleError(error)
+        case .success(let data):
+          self.configureBurnoutInfo(data)
+        }
+      }
+    }
+  }
+  
+  private func configureBurnoutInfo(_ data: BurnoutInfo) {
+    selfView.workItem.isError = data.hasOvertime
+    selfView.testItem.isError = data.hasBadTestResults
+    selfView.sleepItem.isError = data.hasBadSleep
+    selfView.effeciencyItem.isError = data.hasLowEfficiency
+    selfView.stressItem.isError = data.hasStress
+    selfView.burnoutLabel.text = localizator.localizedString("health.burnout") + data.generalState
   }
   
   private func loadData(date: Date) {
     currentDate = date
     let startDate = date.startOfWeek()
     let endDate = date.endOfWeek()
-    selfView.chartView.configure(startDate: startDate, endDate: endDate, stressBound: 1.12, points: [0.3, 0.5, 0.6, 0.9, 0.4])
+    let dateFormat = DateFormatsFactory.getDefaultDateFormat()
+    let startDateString = dateFormat.string(from: startDate)
+    let endDateString = dateFormat.string(from: endDate)
+    SVProgressHUD.show()
+    HealthService.shared.getStressResult(startDate: startDateString, endDate: endDateString) { [weak self] result in
+      DispatchQueue.main.async {
+        guard let self = self else { return }
+        SVProgressHUD.dismiss()
+        switch result {
+        case .failure(let error):
+          self.handleError(error)
+        case .success(let stressList):
+          self.selfView.chartView.configure(startDate: startDate, endDate: endDate, stressBound: Constants.stressBound, title: self.localizator.localizedString("stress.chart.stress_bound"), maxTitle: self.localizator.localizedString("stress.chart.top"), points: stressList)
+        }
+      }
+    }
   }
   
   @objc

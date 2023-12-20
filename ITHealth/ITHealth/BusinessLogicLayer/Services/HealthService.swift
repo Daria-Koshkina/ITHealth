@@ -21,13 +21,11 @@ class HealthService {
   
   func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Swift.Void) {
     
-    //1. Check to see if HealthKit Is Available on this device
     guard HKHealthStore.isHealthDataAvailable() else {
       completion(false, HealthkitSetupError.notAvailableOnDevice)
       return
     }
     
-    //2. Prepare the data types that will interact with HealthKit
     guard   let dateOfBirth = HKObjectType.characteristicType(forIdentifier: .dateOfBirth),
             let bloodType = HKObjectType.characteristicType(forIdentifier: .bloodType),
             let biologicalSex = HKObjectType.characteristicType(forIdentifier: .biologicalSex),
@@ -41,9 +39,7 @@ class HealthService {
       completion(false, HealthkitSetupError.dataTypeNotAvailable)
       return
     }
-    
-    //3. Prepare a list of types you want HealthKit to read and write
-    
+        
     let healthKitTypesToRead: Set<HKObjectType> = [dateOfBirth,
                                                    bloodType,
                                                    biologicalSex,
@@ -55,7 +51,6 @@ class HealthService {
                                                    HKObjectType.workoutType(),
                                                    heartRate]
     
-    //4. Request Authorization
     HKHealthStore().requestAuthorization(toShare: [],
                                          read: healthKitTypesToRead) { (success, error) in
       completion(success, error)
@@ -69,13 +64,10 @@ class HealthService {
     let healthKitStore = HKHealthStore()
       
     do {
-
-      //1. This method throws an error if these data are not available.
       let birthdayComponents =  try healthKitStore.dateOfBirthComponents()
       let biologicalSex =       try healthKitStore.biologicalSex()
       let bloodType =           try healthKitStore.bloodType()
         
-      //2. Use Calendar to calculate age.
       let today = Date()
       let calendar = Calendar.current
       let todayDateComponents = calendar.dateComponents([.year],
@@ -83,7 +75,6 @@ class HealthService {
       let thisYear = todayDateComponents.year!
       let age = thisYear - birthdayComponents.year!
        
-      //3. Unwrap the wrappers to get the underlying enum values.
       let unwrappedBiologicalSex = biologicalSex.biologicalSex
       let unwrappedBloodType = bloodType.bloodType
         
@@ -184,5 +175,17 @@ class HealthService {
       }
     }
     HKHealthStore().execute(sampleQuery)
+  }
+  
+  func getStressResult(startDate: String, endDate: String, completion: @escaping (_ response: Result<[Double], Error>) -> Void) {
+    HealthAPI.shared.getStressResult(startDate: startDate, endDate: endDate, completion: completion)
+  }
+  
+  func getBurnoutResult(completion: @escaping (_ response: Result<BurnoutInfo, Error>) -> Void) {
+    guard let email = ProfileService.shared.user?.email else {
+      completion(.failure(ServerError.unknown))
+      return
+    }
+    HealthAPI.shared.getBurnoutResult(email: email, completion: completion)
   }
 }
